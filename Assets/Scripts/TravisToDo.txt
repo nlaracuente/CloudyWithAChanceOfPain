@@ -1,0 +1,92 @@
+﻿Great start Travis.
+I added comments on how to get all objects without doing a full scan.
+
+Next steps:
+- When the mouse is not on any tile, then no tile should be hightlighted
+- Add a (FieldTile) class that can swap between the current states
+	- Grass to Fire
+	- Grass to BurntGrass (New state - darker green)
+	- BurntGrass to Fire
+	- Fire to Water
+	- Water to Grass (when struck by lightning)
+	- While still keeping the highlight effect 
+
+	FieldTile : Monobehavior, IAttackable,IDousable, IOnMouseEnter/ExitEvents()
+	{
+	   TileState State{
+		   get{
+			  return GetComponentOfType<ITileState>(); // Test if disabled ones are also returned
+			  // might have to iterate through all to get active one
+		   }
+	   }
+
+	   StruckedByLightning() {State.StruckedByLightning()}
+	   RainedOn() {State.RainedOn()}
+
+	   public void ChangeSate(new state = fire){
+			State.enabled  = false;
+			GetComponent<Fire>().enabled;
+	   }
+
+	   OnMouseEnter/ExitEvents()
+	}
+
+	iTileState{
+		StruckedByLightning()
+		RainedOn()
+	}
+
+	[RequireComponent(typeof(TileField))]
+	TileState : Monobehavior, ITileState
+	{
+		StruckedByLightning(){}
+		RainedOn()
+
+		OnStateChange(){ tileField.ChangeSate(fire, grass, water) }
+	}
+
+# Current state updates
+- BurntGrass
+	- IAttackable: changes to Fire
+	- IDousable: changes to grass
+- Fire
+	- IDousable: changes to BurntGrass
+
+# Colors are just for debugging so don't fixate on them
+- Add a new (CropTile) with the following states
+	- Fertile (brown tile)
+		- Not IAttackable
+		- Currently not IDousable (though maybe later ;D)
+	- Seeded (gray tile)
+		- IAttackable: changes to Fertile
+		- IDousable: changes to "Food Tile"
+	- Food (purple tile)
+		- IAttackable: changes to BakedFood
+		- IDousable: nothing
+	- BakedFood (darker purple tile)
+		- IAttackable: changes to BurningFood
+		- IDousable: nothing
+	- BurningFood (red)
+		- IAttackable: nothing
+		- IDousable: changes to BakedFood
+		
+- Then create conditions/routines that switching between all these states
+	- Fire
+		- After -N- seconds: change to BurntGrass
+	- Water
+		- After -N- seconds: change to grass
+	- Crop
+		- After -N- seconds: change to seeds
+	- Seeds
+		- After being RainedOn -N- times: change to Food
+			* Caveat: player can hold down the rain button
+			* See player control section for details
+	- Food & BakedFood
+		- After -N- seconds: change to Fertile
+			* This is for testing purposes for now to test the full cycle
+
+- Player Controls:
+	- Ligthning requires a button press each time
+	- Rain can be held down
+		- RainedOn() should not be called every frame 
+			* but rather over -N- seconds while it is being held down
