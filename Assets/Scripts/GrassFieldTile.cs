@@ -32,6 +32,9 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable
 
     public void RainedOn()
     {
+        if (curRoutine != null)
+            StopCoroutine(curRoutine);
+
         switch (state)
         {
             case State.Grass:

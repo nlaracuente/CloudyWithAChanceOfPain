@@ -153,27 +153,13 @@ public class CropTile : MonoBehaviour, IConsumable
         //var total = Enum.GetNames(typeof(State)).Length;
         //var index = next < total ? next : 0;
 
-        // Should no longer be burning
-        if (burningAudioSource != null)
-        {
-            burningAudioSource.Stop();
-            burningAudioSource = null;
-        }
-
         ChangeState(newState);
     }
 
     public void RainedOn()
     {
         if (burningStates.Contains(state))
-        {
             AudioManager.Instance.PlayRandom2DClip(firePutOutInfoClips);
-            if (burningAudioSource != null)
-            {
-                burningAudioSource.Stop();
-                burningAudioSource = null;
-            }
-        }
 
         switch (state)
         {
@@ -207,10 +193,7 @@ public class CropTile : MonoBehaviour, IConsumable
     public void StruckedByLightning()
     {
         if (burnableStates.Contains(state) && burningAudioSource == null)
-        {
-            burningAudioSource = AudioManager.Instance.PlayRandom2DClip(flameInfoClips);
-            burningAudioSource.loop = true;
-        }            
+            AudioManager.Instance.PlayRandom2DClip(flameInfoClips);
 
         switch (state)
         {

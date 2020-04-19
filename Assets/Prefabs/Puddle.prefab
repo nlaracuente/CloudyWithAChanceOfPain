@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1895710195425284065}
   - component: {fileID: 3517314928734267229}
+  - component: {fileID: 7081398926508901960}
   m_Layer: 0
   m_Name: Puddle
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 249642495268260504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0.485, z: 0}
-  m_LocalScale: {x: 5.3999996, y: 0.3, z: 5.3999996}
+  m_LocalScale: {x: 1, y: 0.3, z: 1}
   m_Children:
   - {fileID: 948650369977632831}
   - {fileID: 4254644601371661231}
@@ -47,6 +48,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 12.69, z: 1.1}
   m_Center: {x: 0, y: 6.4, z: 0}
+--- !u!111 &7081398926508901960
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249642495268260504}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 126bab6615e1e9a48ad452d3fab2aaec, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 126bab6615e1e9a48ad452d3fab2aaec, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1653424051666960085
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8322211956798377091}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.13999999, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1.1111112, y: 1, z: 0.81111115}
   m_Children: []
   m_Father: {fileID: 1895710195425284065}

@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64084a9a97f4f604f9232b9fb4e591e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!1 &733711787
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388efeee00f3386478b7520c336a9678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!1 &1272000504
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388efeee00f3386478b7520c336a9678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!114 &1272000506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67d88411db10fb42b96414d732b48d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 1
+  isDefultEnableState: 1
 --- !u!114 &1272000507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64084a9a97f4f604f9232b9fb4e591e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!114 &1272000508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67d88411db10fb42b96414d732b48d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!114 &1405115458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388efeee00f3386478b7520c336a9678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!114 &1405115459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64084a9a97f4f604f9232b9fb4e591e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 1
+  isDefultEnableState: 1
 --- !u!114 &1405115460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,7 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67d88411db10fb42b96414d732b48d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!1 &1685735740
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388efeee00f3386478b7520c336a9678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 1
+  isDefultEnableState: 1
 --- !u!114 &1906803654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67d88411db10fb42b96414d732b48d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!114 &1906803655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64084a9a97f4f604f9232b9fb4e591e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isDefultEnableState: 0
 --- !u!114 &1906803656
 MonoBehaviour:
   m_ObjectHideFlags: 0

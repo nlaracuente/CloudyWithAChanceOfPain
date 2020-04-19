@@ -6,5 +6,7 @@ public interface ITileState
 {
     void StruckedByLightning();
     void RainedOn();
+    void OnMouseOverEvent();
+    void OnMouseExitEvent();
     bool IsEnabled { get; set; }
 }

@@ -10,15 +10,21 @@ public class Fire : MonoBehaviour, ITileState
     private FieldTile FieldTile { get; set; }
 
     [SerializeField]
-    private bool isEnabled;
+    private bool isDefultEnableState;
+
+    [HideInInspector]
     public bool IsEnabled { get; set; } = false;
 
     void Awake()
     {
-        IsEnabled = isEnabled;
-        FireMaterial = GetComponent<MeshRenderer>().material;
-        StartingColor = FireMaterial.color;
-        CurrentColor = FireMaterial.color; 
+        IsEnabled = isDefultEnableState;
+        if (IsEnabled)
+        {
+            FireMaterial = GetComponent<MeshRenderer>().material;
+            FireMaterial.color = Color.red;
+            StartingColor = FireMaterial.color;
+            CurrentColor = FireMaterial.color;
+        }
     }
 
     // Start is called before the first frame update
@@ -36,28 +42,42 @@ public class Fire : MonoBehaviour, ITileState
     public void StruckedByLightning()
     {
         if (!IsEnabled)
+        {
             return;
+        }
+
+        Setup();
         //If Fire is stuck by Lightning it should do nothing for now, unless it was hit by water first, then take it back to fire
         Debug.Log("Fire has been hit by Lightning!");
         FireMaterial.color = StartingColor;
         CurrentColor = StartingColor;
         FieldTile.ChangeState("Fire");
+        isDefultEnableState = IsEnabled;
     }
 
     public void RainedOn()
     {
         if (!IsEnabled)
+        {
             return;
+        }
+
+        Setup();
         Debug.Log("Fire has been hit by Water!");
         FireMaterial.color = Color.blue;
         CurrentColor = Color.blue;
         FieldTile.ChangeState("Water");
+        isDefultEnableState = IsEnabled;
     }
 
     public void OnMouseOverEvent()
     {
         if (!IsEnabled)
+        {
             return;
+        }
+
+        Setup();
         Debug.Log("Fire has mouse pointer on it!");
         FireMaterial.color = Color.yellow;
     }
@@ -65,8 +85,26 @@ public class Fire : MonoBehaviour, ITileState
     public void OnMouseExitEvent()
     {
         if (!IsEnabled)
+        {
             return;
+        }
+
+        Setup();
         Debug.Log("Fire has NO mouse pointer");
         FireMaterial.color = CurrentColor;
+    }
+
+    /// <summary>
+    /// Setup starting values
+    /// </summary>
+    private void Setup()
+    {
+        if (!FireMaterial)
+        {
+            FireMaterial = GetComponent<MeshRenderer>().material;
+            FireMaterial.color = Color.red;
+            StartingColor = FireMaterial.color;
+            CurrentColor = FireMaterial.color;
+        }
     }
 }

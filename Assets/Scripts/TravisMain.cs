@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -58,6 +59,8 @@ public class TravisMain : MonoBehaviour
         {
             //Grab the IDousable Interface ofthe object we hit
             FieldTile obj = hitInfo.collider.GetComponent<FieldTile>();
+            Debug.Log($"hitInfo.collider.name:  {hitInfo.collider.name}");
+            Debug.Log($"obj:  {obj}");
 
             //We hit a "Attackable" object
             if(obj != null)
@@ -114,7 +117,7 @@ public class TravisMain : MonoBehaviour
         if (Physics.Raycast(rayOrigin, out hitInfo))
         {
             //Grab the ISelectable Interface ofthe object we hit
-            ISelectable obj = hitInfo.collider.GetComponent<ISelectable>();
+            ITileState obj = hitInfo.collider.GetComponents<ITileState>().Where(c => c.IsEnabled).FirstOrDefault();
 
             //We hit a "Selectable" object
             if (obj != null)
@@ -132,7 +135,7 @@ public class TravisMain : MonoBehaviour
         MonoBehaviour[] gameObjects = (MonoBehaviour[])FindObjectsOfType(typeof(MonoBehaviour));
         foreach (var gameObject in gameObjects)
         {
-            ISelectable selectableObject = gameObject.GetComponent<ISelectable>();
+            ITileState selectableObject = gameObject.GetComponents<ITileState>().Where(c => c.IsEnabled).FirstOrDefault();
             if (selectableObject != null)
             {
                 //Remove the reticle from the object

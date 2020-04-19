@@ -10,14 +10,21 @@ public class Water : MonoBehaviour, ITileState
     private FieldTile FieldTile { get; set; }
 
     [SerializeField]
-    private bool isEnabled;
+    private bool isDefultEnableState;
+
+    [HideInInspector]
     public bool IsEnabled { get; set; } = false;
 
     void Awake()
     {
-        WaterMaterial = GetComponent<MeshRenderer>().material;
-        StartingColor = WaterMaterial.color;
-        CurrentColor = WaterMaterial.color;
+        IsEnabled = isDefultEnableState;
+        if (IsEnabled)
+        {
+            WaterMaterial = GetComponent<MeshRenderer>().material;
+            WaterMaterial.color = Color.blue;
+            StartingColor = WaterMaterial.color;
+            CurrentColor = WaterMaterial.color;
+        }
     }
 
     // Start is called before the first frame update
@@ -35,28 +42,42 @@ public class Water : MonoBehaviour, ITileState
     public void StruckedByLightning()
     {
         if (!IsEnabled)
+        {
             return;
+        }
+
+        Setup();
         Debug.Log("Water has been hit by Lightning!");
         WaterMaterial.color = Color.green;
         CurrentColor = Color.green;
         FieldTile.ChangeState("Grass");
+        isDefultEnableState = IsEnabled;
     }
 
     public void RainedOn()
     {
         if (!IsEnabled)
+        {
             return;
+        }
+
+        Setup();
         //If Water has been hit by water then do nothing, unless it has been hit by Lightning first, then take it back to water
         Debug.Log("Water has been hit by Water!");
         WaterMaterial.color = StartingColor;
         CurrentColor = StartingColor;
         FieldTile.ChangeState("Water");
+        isDefultEnableState = IsEnabled;
     }
 
     public void OnMouseOverEvent()
     {
         if (!IsEnabled)
+        {
             return;
+        }
+
+        Setup();
         Debug.Log("Water has mouse pointer on it!");
         WaterMaterial.color = Color.yellow;
     }
@@ -64,8 +85,26 @@ public class Water : MonoBehaviour, ITileState
     public void OnMouseExitEvent()
     {
         if (!IsEnabled)
+        {
             return;
+        }
+
+        Setup();
         Debug.Log("Water has NO mouse pointer");
         WaterMaterial.color = CurrentColor;
+    }
+
+    /// <summary>
+    /// Setup starting values
+    /// </summary>
+    private void Setup()
+    {
+        if (!WaterMaterial)
+        {
+            WaterMaterial = GetComponent<MeshRenderer>().material;
+            WaterMaterial.color = Color.blue;
+            StartingColor = WaterMaterial.color;
+            CurrentColor = WaterMaterial.color;
+        }
     }
 }
