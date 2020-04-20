@@ -75,6 +75,8 @@ public class CropTile : MonoBehaviour, IConsumable
         State.Food,
     };
 
+    public Resource ResourceType { get { return Resource.Rest; } }
+
     public bool IsConsumable
     {
         get { return state == State.Food || state == State.FoodWatered; }

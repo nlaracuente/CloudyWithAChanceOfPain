@@ -91,7 +91,7 @@ Camera:
   field of view: 12
   orthographic: 0
   orthographic size: 28.6
-  m_Depth: -1
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

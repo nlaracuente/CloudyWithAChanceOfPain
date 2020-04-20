@@ -247,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1876778544287233177}
   - component: {fileID: 7759700127454363172}
+  - component: {fileID: 5915350913064390162}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -289,6 +290,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.34, z: 1}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!111 &5915350913064390162
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951023839832383619}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4c22775b626e63a48bd8fed5d61a2005, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 4c22775b626e63a48bd8fed5d61a2005, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6250554369725635526
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,4 +9,12 @@ public interface IConsumable: IAttackable, IDousable
     bool IsConsumable { get; }
     void Consume();
     GameObject gameObject { get; }
+    Resource ResourceType { get; }
+}
+
+public enum Resource
+{
+    Food,
+    Water,
+    Rest,
 }

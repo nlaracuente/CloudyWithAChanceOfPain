@@ -18,8 +18,8 @@ TagManager:
   - NavMeshIgnore
   - Clickable
   - Grid
-  - 
-  - 
+  - ResourceTarget
+  - Billboard
   - 
   - 
   - 

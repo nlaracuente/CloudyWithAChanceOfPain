@@ -73,8 +73,8 @@ public class Cloud : MonoBehaviour
         get
         {
             var pos = Input.mousePosition;
-            pos.z = Camera.main.WorldToScreenPoint(transform.position).z;
-            return Camera.main.ScreenToWorldPoint(pos);
+            pos.z = LevelController.Instance.MainCamera.WorldToScreenPoint(transform.position).z;
+            return LevelController.Instance.MainCamera.ScreenToWorldPoint(pos);
         }
     }
 
@@ -88,6 +88,9 @@ public class Cloud : MonoBehaviour
 
     private void Update()
     {
+        if (LevelController.Instance.IsGameOver)
+            return;
+
         FollowMouse();        
 
         if (Input.GetMouseButtonDown(leftClick))
@@ -151,7 +154,7 @@ public class Cloud : MonoBehaviour
 
     void PlayEffect(Effect effect)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = LevelController.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         //IConsumable consumable = default;
@@ -188,7 +191,7 @@ public class Cloud : MonoBehaviour
 
     void TriggerEffect(Effect effect)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = LevelController.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (!Physics.Raycast(ray, out hit, Mathf.Infinity, clickableLayer))
