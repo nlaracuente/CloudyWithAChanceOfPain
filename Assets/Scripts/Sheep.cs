@@ -110,7 +110,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     {
         if (Strikes > totalStrikes)
         {
-            StartCoroutine(TriggerDeath());
+            SheepManager.Instance.SheepDied(this);
             return;
         }
 
@@ -436,12 +436,24 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
         navMeshAgent.isStopped = true;
         navMeshAgent.velocity = Vector3.zero;
+
+        SheepManager.Instance.SheepDied(this);
+    }
+
+    public void TriggerGameOverSequence()
+    {
+        StartCoroutine(TriggerDeath(true));
+    }
+
+    public void Die()
+    {
         StartCoroutine(TriggerDeath());
     }
 
-    IEnumerator TriggerDeath()
+    IEnumerator TriggerDeath(bool isGameOver = false)
     {
-        LevelController.Instance.IsGameOver = true;
+
+        LevelController.Instance.IsGameOver = isGameOver;
 
         state = State.Diying;
         thoughtBubble.DisableThought();
@@ -459,9 +471,12 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         }
 
         // Death Cam!
-        deathCamera.enabled = true;
-        LevelController.Instance.MainCamera = deathCamera;
-        Camera.main.enabled = false;
+        if (isGameOver) 
+        {
+            deathCamera.enabled = true;
+            LevelController.Instance.MainCamera = deathCamera;
+            Camera.main.enabled = false;
+        }        
         
         SetAnimatorToCurrentState();
 
@@ -471,7 +486,11 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
         // Hold for a seconds before restarting
         yield return new WaitForSeconds(1f);
-        GameManager.Instance.GameOver();
+
+        if (isGameOver)
+            GameManager.Instance.GameOver();
+        else
+            DestroyObject(gameObject);
     }
 
     ///// <summary>
