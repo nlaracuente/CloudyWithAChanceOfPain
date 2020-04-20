@@ -3,21 +3,21 @@
 public class CloudParticleEffect : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem particleSystem;
+    ParticleSystem pSystem;
 
     private void Awake()
     {
-        if (particleSystem == null)
-            particleSystem = GetComponentInChildren<ParticleSystem>();
+        if (pSystem == null)
+            pSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     public void Play()
     {
-        particleSystem?.Play();
+        pSystem?.Play();
     }
 
     public void Stop()
     {
-        particleSystem?.Stop();
+        pSystem?.Stop();
     }
 }

@@ -78,5 +78,5 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable
         AudioManager.Instance.PlayRandom2DClip(fireClipInfos);
         yield return new WaitForSeconds(burningTime);
         fieldEffects.DisableEffects();
-    }
+    }    
 }

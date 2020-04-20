@@ -39,7 +39,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
     [SerializeField] float timeBurning = 5f;
     [SerializeField] float timeResting = 2f;
     [SerializeField] float timeToPreviewThought = 2f;
-    [SerializeField] float timeToDisplayResourceNotFoundIcon = 1f;
+    [SerializeField] float timeBeforeDisplayResourceNotFound = 1f;
 
     // Particle Effects
     [SerializeField] ParticleSystem fireParticleSystem;
@@ -98,7 +98,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
         thoughtBubble.DisableThought();
 
         state = State.Resting;
-        curResource = Resource.Rest;
+        curResource = Resource.Food;
         AutoChangeState();
     }
 
@@ -117,7 +117,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
         {
             // Done Walking: Consume Resource
             case State.Walking:
-                if(curConsumable.ResourceType == Resource.Rest)
+                if (curConsumable.ResourceType == Resource.Rest)
                     SwitchCoroutine(RestingRoutine());
                 else
                     SwitchCoroutine(ConsumeResourceRoutine(curConsumable));
@@ -134,10 +134,9 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
                 if(switchResource)
                     SwitchToNextResource();
 
-                var go = GetRandomResource(curResource);
-                curConsumable = go.GetComponent<IConsumable>();
-                targetIcon.SetTarget(go.transform);
-                SwitchCoroutine(WalkRoutine(go.transform.position));
+                curConsumable = GetRandomConsumable(curResource);
+                targetIcon.SetTarget(curConsumable.gameObject.transform);
+                SwitchCoroutine(WalkRoutine(curConsumable.gameObject.transform.position));
                 break;
         }
     }
@@ -319,6 +318,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
 
         if (!consumable.IsConsumable)
         {
+            yield return new WaitForSeconds(timeBeforeDisplayResourceNotFound);
             yield return StartCoroutine(ShowThoughtBubbleRoutine(ThoughtBubble.Thought.Hurt));
             Strikes++;
         }
@@ -358,7 +358,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
         while(Time.time < t)
         {
             // Get Random destination
-            var d = GetRandomResource().transform.position;
+            var d = GetRandomConsumable().gameObject.transform.position;
 
             // Face it and book it!
             transform.LookAt(d);
@@ -404,38 +404,37 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
     /// </summary>
     /// <param name="type"></param>
     /// <returns></returns>
-    GameObject GetClosestResource(Resource type)
+    IConsumable GetClosestConsumable(Resource type)
     {
-        var resources = GetAllResourcesByType(type);
+        IConsumable consumable = curConsumable;
+        var consumables = GetAllConsumables(type);
+        var distance = Mathf.Infinity;        
 
-        var distance = Mathf.Infinity;
-        GameObject resource = null;
-
-        foreach (var r in resources)
+        foreach (var c in consumables)
         {
-            var d = Vector3.Distance(r.transform.position, transform.position);
+            var d = Vector3.Distance(c.gameObject.transform.position, transform.position);
 
             if (d < distance)
             {
                 distance = d;
-                resource = r;
+                consumable = c;
             }
         }
 
-        return resource;
+        return consumable;
     }
 
     /// <summary>
     /// Chooses a random resource from all resources
     /// </summary>
     /// <returns></returns>
-    GameObject GetRandomResource()
+    IConsumable GetRandomConsumable()
     {
         var max = Enum.GetNames(typeof(Resource)).Length;
         var i = Random.Range(0, max);
         var type = (Resource)i;
 
-        return GetRandomResource(type);
+        return GetRandomConsumable(type);
     }
 
     /// <summary>
@@ -443,11 +442,24 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
     /// </summary>
     /// <param name="type"></param>
     /// <returns></returns>
-    GameObject GetRandomResource(Resource type)
+    IConsumable GetRandomConsumable(Resource type)
     {
-        var resources = GetAllResourcesByType(type);
-        var i = Random.Range(0, resources.Count);
-        return i < resources.Count ? resources[i] : null;
+        IConsumable resource = curConsumable;
+
+        var resources = GetAllConsumables(type);
+
+        // All we have is the current one
+        if (resources.Count == 1)
+            return curConsumable;
+
+        // Avoid getting the same current one
+        while (resource == curConsumable)
+        {
+            var i = Random.Range(0, resources.Count);
+            resource = resources[i];
+        }            
+
+        return resource;
     }
 
     /// <summary>
@@ -455,21 +467,24 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
     /// </summary>
     /// <param name="type"></param>
     /// <returns></returns>
-    List<GameObject> GetAllResourcesByType(Resource type)
+    List<IConsumable> GetAllConsumables(Resource type)
     {
-        List<GameObject> resources = new List<GameObject>();
+        List<IConsumable> resources = new List<IConsumable>();
         switch (type)
         {
             case Resource.Food:
-                resources = FindObjectsOfType<CropTile>().Select(n => n.gameObject).ToList();
+                resources = FindObjectsOfType<CropTile>()
+                            .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
                 break;
 
             case Resource.Water:
-                resources = FindObjectsOfType<WaterResource>().Select(n => n.gameObject).ToList();
+                resources = FindObjectsOfType<WaterResource>()
+                            .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
                 break;
 
             case Resource.Rest:
-                resources = FindObjectsOfType<RestResource>().Select(n => n.gameObject).ToList();
+                resources = FindObjectsOfType<RestResource>()
+                            .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
                 break;
         }
         return resources;

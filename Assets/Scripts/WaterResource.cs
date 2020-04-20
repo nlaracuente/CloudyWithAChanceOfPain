@@ -27,7 +27,7 @@ public class WaterResource : MonoBehaviour, IConsumable
     AudioClipInfo fillingUpClipInfo;
 
     public bool IsConsumable { get { return state == State.Full; } }
-    public Resource ResourceType { get { return Resource.Rest; } }
+    public Resource ResourceType { get { return Resource.Water; } }
 
     /// <summary>
     /// Initialize
