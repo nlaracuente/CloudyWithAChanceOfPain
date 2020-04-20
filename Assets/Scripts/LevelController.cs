@@ -4,6 +4,7 @@ public class LevelController : Singleton<LevelController>
 {
     public Camera MainCamera { get; set; }
     public bool IsGameOver { get; set; }
+    public bool IsPaused { get; set; }
 
     [SerializeField, Range(1f, 30f), Tooltip("Seconds before the fire spread")]
     float timeBeforeFireSpreads = 3f;
@@ -21,6 +22,8 @@ public class LevelController : Singleton<LevelController>
     private void Start()
     {
         MainCamera = Camera.main;
+        
+        StartCoroutine(SceneFader.Instance.FadeRoutine(1f, 0f, GameManager.Instance.FaderTime));
     }
 
     private void Update()

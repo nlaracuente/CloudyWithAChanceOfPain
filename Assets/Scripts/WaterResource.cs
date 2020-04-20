@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class WaterResource : MonoBehaviour, IConsumable
+public class WaterResource : BaseResource
 {
     enum State
     {
@@ -26,14 +25,17 @@ public class WaterResource : MonoBehaviour, IConsumable
     [SerializeField]
     AudioClipInfo fillingUpClipInfo;
 
-    public bool IsConsumable { get { return state == State.Full; } }
-    public Resource ResourceType { get { return Resource.Water; } }
+    bool IsSetAsUnconsumable { get; set; }
+
+    override public bool IsConsumable { get { return !IsSetAsUnconsumable && state == State.Full; } }
+    override public Resource ResourceType { get { return Resource.Water; } }
 
     /// <summary>
     /// Initialize
     /// </summary>
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         state = defaultState;
         emptyPrefab.SetActive(state == State.Empty);
         fullPrefab.SetActive(state == State.Full);
@@ -56,21 +58,26 @@ public class WaterResource : MonoBehaviour, IConsumable
             AudioManager.Instance.Play2DSound(fillingUpClipInfo.clip, fillingUpClipInfo.volume);
     }
 
-    public void Consume()
+    override public void Consume()
     {
-        if(IsConsumable)
-            ChangeState(State.Empty);
+        ChangeState(State.Empty);
+        IsSetAsUnconsumable = false;
     }
 
-    public void RainedOn()
+    override public void RainedOn()
     {
         if (!IsConsumable)
             ChangeState(State.Full);
     }
 
-    public void StruckedByLightning()
+    override public void StruckedByLightning()
     {
         if (IsConsumable)
             ChangeState(State.Empty);
+    }
+
+    public override void SetAsNotConsumable()
+    {
+        IsSetAsUnconsumable = true;
     }
 }

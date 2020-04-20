@@ -8,6 +8,7 @@ public interface IConsumable: IAttackable, IDousable
 {
     bool IsConsumable { get; }
     void Consume();
+    void SetAsNotConsumable();
     GameObject gameObject { get; }
     Resource ResourceType { get; }
 }

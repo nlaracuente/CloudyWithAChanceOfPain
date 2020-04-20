@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
 
-public class CropTile : MonoBehaviour, IConsumable, IBurnable
+public class CropTile : BaseResource, IConsumable, IBurnable
 {
     enum State 
     { 
@@ -77,16 +77,18 @@ public class CropTile : MonoBehaviour, IConsumable, IBurnable
         State.Food,
     };
 
-    public Resource ResourceType { get { return Resource.Food; } }
+    override public Resource ResourceType { get { return Resource.Food; } }
 
-    public bool IsConsumable
+    override public bool IsConsumable
     {
-        get { return state == State.Food || state == State.FoodWatered; }
+        get { return !IsSetAsUnconsumable && (state == State.Food || state == State.FoodWatered); }
     }
 
-    // Start empty
-    private void Start()
+    bool IsSetAsUnconsumable { get; set; }
+
+    protected override void Start()
     {
+        base.Start();
         ChangeState(defaultState);
     }
 
@@ -164,7 +166,7 @@ public class CropTile : MonoBehaviour, IConsumable, IBurnable
         ChangeState(newState);
     }
 
-    public void RainedOn()
+    override public void RainedOn()
     {
         if (burningStates.Contains(state))
             AudioManager.Instance.PlayRandom2DClip(firePutOutInfoClips);
@@ -198,7 +200,7 @@ public class CropTile : MonoBehaviour, IConsumable, IBurnable
         }        
     }
 
-    public void StruckedByLightning()
+    override public void StruckedByLightning()
     {
         if (burnableStates.Contains(state) && burningAudioSource == null)
             AudioManager.Instance.PlayRandom2DClip(flameInfoClips);
@@ -228,16 +230,23 @@ public class CropTile : MonoBehaviour, IConsumable, IBurnable
         }
     }
 
-    public void Consume()
+    override public void Consume()
     {
         if (state == State.Food)
             ChangeState(State.Soil);
         else if (state == State.FoodWatered)
             ChangeState(State.SoilWatered);
+
+        IsSetAsUnconsumable = false;
     }
 
     public void Burn()
     {
         StruckedByLightning();
+    }
+
+    public override void SetAsNotConsumable()
+    {
+        IsSetAsUnconsumable = true;
     }
 }

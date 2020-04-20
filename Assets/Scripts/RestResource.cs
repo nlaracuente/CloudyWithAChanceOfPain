@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class RestResource : MonoBehaviour, IConsumable
+﻿public class RestResource : BaseResource
 {
-    public bool IsConsumable { get { return true; } }
-    public Resource ResourceType { get { return Resource.Rest; } }
-    public void Consume() { }
-    public void RainedOn() { }
-    public void StruckedByLightning() { }
+    override public bool IsConsumable { get { return true; } }
+    override public Resource ResourceType { get { return Resource.Rest; } }
+    override public void Consume() { }
+    override public void RainedOn() { }
+    public override void SetAsNotConsumable() { }
+    override public void StruckedByLightning() { }
 }

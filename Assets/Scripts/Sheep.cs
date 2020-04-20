@@ -56,15 +56,13 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     IEnumerator curRoutine;
     State state;
 
-    /// <summary>
-    /// Defaults to being hungry
-    /// </summary>
-    Resource curResource;
+    Resource curResourceType;
+    BaseResource curResource;
 
     /// <summary>
     /// The current consumable the sheep has targeted
     /// </summary>
-    IConsumable curConsumable;
+    BaseResource curConsumable;
 
     ThoughtBubble thoughtBubble;
 
@@ -101,7 +99,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         thoughtBubble.DisableThought();
 
         state = State.Resting;
-        curResource = Resource.Food;
+        curResourceType = Resource.Rest;
         AutoChangeState();
     }
 
@@ -120,10 +118,10 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         {
             // Done Walking: Consume Resource
             case State.Walking:
-                if (curConsumable.ResourceType == Resource.Rest)
+                if (curResource.ResourceType == Resource.Rest)
                     SwitchCoroutine(RestingRoutine());
                 else
-                    SwitchCoroutine(ConsumeResourceRoutine(curConsumable));
+                    SwitchCoroutine(ConsumeResourceRoutine(curResource));
                 break;
 
             // Done consuming resource: Fetch the next one
@@ -138,9 +136,9 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
                 if (switchResource)
                     SwitchToNextResource();
 
-                curConsumable = GetRandomConsumable(curResource);
-                targetIcon.SetTarget(curConsumable.gameObject.transform);
-                SwitchCoroutine(WalkRoutine(curConsumable.gameObject.transform.position));
+                curResource = GetAvailableResource(curResourceType);
+                targetIcon.SetTarget(curResource.gameObject.transform);
+                SwitchCoroutine(WalkRoutine());
                 break;
         }
     }
@@ -150,18 +148,18 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// </summary>
     void SwitchToNextResource()
     {
-        switch (curResource)
+        switch (curResourceType)
         {
             case Resource.Food:
-                curResource = Resource.Water;
+                curResourceType = Resource.Water;
                 break;
 
             case Resource.Water:
-                curResource = Resource.Rest;
+                curResourceType = Resource.Rest;
                 break;
 
             case Resource.Rest:
-                curResource = Resource.Food;
+                curResourceType = Resource.Food;
                 break;
         }
     }
@@ -301,14 +299,16 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// </summary>
     /// <param name="destination"></param>
     /// <returns></returns>
-    IEnumerator WalkRoutine(Vector3 destination)
+    IEnumerator WalkRoutine()
     {
+        var accessPoint = curResource.GetAccessPoint();
+
         state = State.Walking;
-        navMeshAgent.SetDestination(destination);
+        navMeshAgent.SetDestination(accessPoint.position);
         navMeshAgent.isStopped = false;
 
         ThoughtBubble.Thought thought = curThought;
-        switch(curResource)
+        switch(curResourceType)
         {
             case Resource.Food:
                 thought = ThoughtBubble.Thought.Food;
@@ -333,8 +333,10 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         yield return new WaitForEndOfFrame();
 
         // TODO: Change to smooth look at
-        transform.LookAt(curConsumable.gameObject.transform);
+        transform.LookAt(curResource.gameObject.transform);
         yield return new WaitForEndOfFrame();
+
+        curResource.SetAccessPoint(accessPoint);
 
         // Continue
         AutoChangeState();
@@ -353,17 +355,17 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         AutoChangeState();
     }
 
-    IEnumerator ConsumeResourceRoutine(IConsumable consumable)
+    IEnumerator ConsumeResourceRoutine(BaseResource resource)
     {
-        state = consumable.ResourceType == Resource.Food
+        state = resource.ResourceType == Resource.Food
                 ? State.Eating
                 : State.Drinking;
 
         // To track whether the resource was consumed and we can change it
         // Since the state of the "IsConsumable" will change once consumed
-        bool consumed = consumable.IsConsumable;
+        bool consumed = resource.IsConsumable;
 
-        if (!consumable.IsConsumable)
+        if (!resource.IsConsumable)
         {
             yield return new WaitForSeconds(timeBeforeDisplayResourceNotFound);
             yield return StartCoroutine(ShowThoughtBubbleRoutine(ThoughtBubble.Thought.Hurt));
@@ -371,20 +373,23 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         }
         else
         {
+            // Prevents others from eaiting it
+            resource.SetAsNotConsumable();
+
             // Reset Strikes
             Strikes = 0;
             var bubbleRoutine = ShowThoughtBubbleRoutine(ThoughtBubble.Thought.Happy);
             StartCoroutine(bubbleRoutine);
 
-            var infos = consumable.ResourceType == Resource.Food
+            var infos = resource.ResourceType == Resource.Food
                         ? eatingClips
-                        : consumable.ResourceType == Resource.Water
+                        : resource.ResourceType == Resource.Water
                         ? drinkingClips
                         : restingClips;
 
             var s = AudioManager.Instance.PlayRandom2DClip(infos);
             yield return new WaitForSeconds(s.clip.length);
-            curConsumable.Consume();
+            resource.Consume();
 
             StopCoroutine(bubbleRoutine);
         }
@@ -410,11 +415,11 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         while (Time.time < t)
         {
             // Get Random destination
-            var d = GetRandomConsumable().gameObject.transform.position;
+            var accessPoint = GetRandomAvailableResource().GetAccessPoint();
 
             // Face it and book it!
-            transform.LookAt(d);
-            navMeshAgent.SetDestination(d);
+            transform.LookAt(accessPoint.position);
+            navMeshAgent.SetDestination(accessPoint.position);
             var audio = AudioManager.Instance.PlayRandom2DClip(burningClips);
 
             // But only run while there is still time
@@ -424,6 +429,8 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
             if(audio != null)
                 audio.Stop();
 
+            // We are done using it so add it back
+            curResource.SetAccessPoint(accessPoint);
             navMeshAgent.velocity = Vector3.zero;
         }
 
@@ -464,45 +471,45 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
         // Hold for a seconds before restarting
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        GameManager.Instance.GameOver();
     }
 
-    /// <summary>
-    /// Returns the closest resource to the sheep
-    /// </summary>
-    /// <param name="type"></param>
-    /// <returns></returns>
-    IConsumable GetClosestConsumable(Resource type)
-    {
-        IConsumable consumable = curConsumable;
-        var consumables = GetAllConsumables(type);
-        var distance = Mathf.Infinity;        
+    ///// <summary>
+    ///// Returns the closest resource to the sheep
+    ///// </summary>
+    ///// <param name="type"></param>
+    ///// <returns></returns>
+    //IConsumable GetClosestConsumable(Resource type)
+    //{
+    //    IConsumable consumable = curConsumable;
+    //    var consumables = GetAllConsumables(type);
+    //    var distance = Mathf.Infinity;        
 
-        foreach (var c in consumables)
-        {
-            var d = Vector3.Distance(c.gameObject.transform.position, transform.position);
+    //    foreach (var c in consumables)
+    //    {
+    //        var d = Vector3.Distance(c.gameObject.transform.position, transform.position);
 
-            if (d < distance)
-            {
-                distance = d;
-                consumable = c;
-            }
-        }
+    //        if (d < distance)
+    //        {
+    //            distance = d;
+    //            consumable = c;
+    //        }
+    //    }
 
-        return consumable;
-    }
+    //    return consumable;
+    //}
 
     /// <summary>
     /// Chooses a random resource from all resources
     /// </summary>
     /// <returns></returns>
-    IConsumable GetRandomConsumable()
+    BaseResource GetRandomAvailableResource()
     {
         var max = Enum.GetNames(typeof(Resource)).Length;
         var i = Random.Range(0, max);
         var type = (Resource)i;
 
-        return GetRandomConsumable(type);
+        return GetAvailableResource(type);
     }
 
     /// <summary>
@@ -510,53 +517,39 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// </summary>
     /// <param name="type"></param>
     /// <returns></returns>
-    IConsumable GetRandomConsumable(Resource type)
+    BaseResource GetAvailableResource(Resource type)
     {
-        IConsumable resource = curConsumable;
-
-        var resources = GetAllConsumables(type);
-
-        // All we have is the current one
-        if (resources.Count == 1)
-            return curConsumable;
-
-        // Avoid getting the same current one
-        while (resource == curConsumable)
-        {
-            var i = Random.Range(0, resources.Count);
-            resource = resources[i];
-        }            
-
-        return resource;
+        curResource = ResourceManager.Instance.GetAvailableResource(type, curResource);
+        return curResource;
     }
 
-    /// <summary>
-    /// Returns all available resources of the give type
-    /// </summary>
-    /// <param name="type"></param>
-    /// <returns></returns>
-    List<IConsumable> GetAllConsumables(Resource type)
-    {
-        List<IConsumable> resources = new List<IConsumable>();
-        switch (type)
-        {
-            case Resource.Food:
-                resources = FindObjectsOfType<CropTile>()
-                            .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
-                break;
+    ///// <summary>
+    ///// Returns all available resources of the give type
+    ///// </summary>
+    ///// <param name="type"></param>
+    ///// <returns></returns>
+    //List<IConsumable> GetAllConsumables(Resource type)
+    //{
+    //    List<IConsumable> resources = new List<IConsumable>();
+    //    switch (type)
+    //    {
+    //        case Resource.Food:
+    //            resources = FindObjectsOfType<CropTile>()
+    //                        .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
+    //            break;
 
-            case Resource.Water:
-                resources = FindObjectsOfType<WaterResource>()
-                            .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
-                break;
+    //        case Resource.Water:
+    //            resources = FindObjectsOfType<WaterResource>()
+    //                        .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
+    //            break;
 
-            case Resource.Rest:
-                resources = FindObjectsOfType<RestResource>()
-                            .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
-                break;
-        }
-        return resources;
-    }
+    //        case Resource.Rest:
+    //            resources = FindObjectsOfType<RestResource>()
+    //                        .Select(n => n.gameObject.GetComponent<IConsumable>()).ToList();
+    //            break;
+    //    }
+    //    return resources;
+    //}
 
     public void OnPuddleEnter()
     {

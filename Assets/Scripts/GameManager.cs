@@ -1,133 +1,62 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
-    Sheep sheep;
+    [SerializeField, Tooltip("How long to wait in between each timer cycle")]
+    float faderTime = 0.5f;
+    public float FaderTime { get { return faderTime; } }
 
-    /// <summary>
-    /// Used for Scene Transitions
-    /// </summary>
-    [SerializeField]
-    private GameObject transitionPanel;
-    [SerializeField]
-    private Animator sceneTransitionAnimation;
-
-    private  enum SceneInex
+    public enum SceneId
     {
-        Title = 0,
-        Level = 1,
-        Lose = 2,
-        Win = 3
+        MainMenu,
+        Level,
+        GameOver,
+        GameCompleted,
     }
 
+    public SceneId CurrentScene { get { return (SceneId)SceneManager.GetActiveScene().buildIndex; } }
 
-    /// <summary>
-    /// The layer mask where the floor we care for collision is at
-    /// </summary>
-    [SerializeField]
-    LayerMask clickableLayer;
-
-    bool IsGameOver { get; set; }
-
-    private void Start()
+    public void Play()
     {
-        transitionPanel = GameObject.Find("SceneTransitionPanel");
+        StartCoroutine(TransitionToScene(SceneId.Level));
     }
 
-    private void Update()
+    public void GameOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        StartCoroutine(TransitionToScene(SceneId.GameOver));
+    }
+
+    public void GameCompleted()
+    {
+        StartCoroutine(TransitionToScene(SceneId.GameCompleted));
+    }
+
+    public void ReloadScene()
+    {
+        var scene = (SceneId)SceneManager.GetActiveScene().buildIndex;
+        StartCoroutine(TransitionToScene(scene));
+    }
+
+    IEnumerator TransitionToScene(SceneId sceneId)
+    {
+        if(SceneFader.Instance != null)
+            yield return StartCoroutine(SceneFader.Instance.FadeRoutine(0f, 1f, GameManager.Instance.FaderTime));
+
+        var index = (int)sceneId;
+
+        if (Application.CanStreamedLevelBeLoaded(index))
+            SceneManager.LoadScene(index, LoadSceneMode.Single);
+        else
         {
-
+            Debug.LogErrorFormat("Scene '{0}' cannot be loaded", sceneId);
+            ReloadScene();
         }
-    }
+    }    
 
-    /// <summary>
-    /// Initializes the game and starts the gameplay loop
-    /// </summary>
-    public void StartGame()
-    {
-        //Start Transition process and load the game
-        LoadLevel();
-    }
-
-    private void LoadLevel()
-    {
-        //transitionPanel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        sceneTransitionAnimation = transitionPanel.GetComponent<Animator>();
-        sceneTransitionAnimation.enabled = true;
-        //Starts the animation to laod the level
-        StartCoroutine(LoadSceneAFterTransition((int)SceneInex.Level));
-    }
-
-    /// <summary>
-    /// Load any scene after using transiton animation
-    /// </summary>
-    /// <param name="sceneIndex">int number matching to scene number in build settings</param>
-    /// <returns></returns>
-    private IEnumerator LoadSceneAFterTransition(int sceneIndex)
-    {
-        //show animate out animation
-        //sceneTransitionAnimation.SetBool("animateOut", true);
-        yield return new WaitForSeconds(1.0f);
-
-        //load the scene we want
-        SceneManager.LoadScene(sceneIndex);
-    }
-
-    /// <summary>
-    /// Method to control what happens when you lose the game
-    /// </summary>
-    public void GameLost()
-    {
-        //Load the the you lost scene
-        StartCoroutine(LoadSceneAFterTransition((int)SceneInex.Lose));
-    }
-
-    /// <summary>
-    /// Method to control what happens when you win the game
-    /// </summary>
-    public void GameWon()
-    {
-        //Load the you won scene
-        StartCoroutine(LoadSceneAFterTransition((int)SceneInex.Win));
-    }
-
-    public void LoadTitle()
-    {
-        //Load the Title Menu Scene
-        StartCoroutine(LoadSceneAFterTransition((int)SceneInex.Title));
-    }
-
-    /// <summary>
-    /// Terminates the application
-    /// </summary>
-    public void ExitGame()
+    public void QuitGame()
     {
         Application.Quit();
-    }
-
-    IConsumable GetConsumableStriked()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        IConsumable consumable = default;
-        if(Physics.Raycast (ray, out hit, Mathf.Infinity, clickableLayer))
-        {
-            consumable = hit.collider.GetComponent<IConsumable>();
-        }
-
-        return consumable;
-    }
-
-    void OnSceneLoaded()
-    {
-        IsGameOver = false;
-        sheep = FindObjectOfType<Sheep>();
     }
 }

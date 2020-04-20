@@ -7,7 +7,8 @@ public class TileHighlighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LevelController.Instance.IsGameOver)
+        if (LevelController.Instance.IsGameOver ||
+            LevelController.Instance.IsPaused)
         {
             highlighter.SetActive(false);
             return;

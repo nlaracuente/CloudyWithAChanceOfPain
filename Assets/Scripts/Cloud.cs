@@ -88,7 +88,8 @@ public class Cloud : Singleton<Cloud>
 
     private void Update()
     {
-        if (LevelController.Instance.IsGameOver)
+        if (LevelController.Instance.IsGameOver ||
+            LevelController.Instance.IsPaused)
             return;
 
         FollowMouse();        
