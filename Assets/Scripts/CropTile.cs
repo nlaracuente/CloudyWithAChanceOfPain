@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
-using System;
 
-public class CropTile : MonoBehaviour, IConsumable
+public class CropTile : MonoBehaviour, IConsumable, IBurnable
 {
     enum State 
     { 
@@ -33,6 +32,9 @@ public class CropTile : MonoBehaviour, IConsumable
 
     [SerializeField]
     float transitionDelay = 5f;
+
+    [SerializeField]
+    ParticleSystem smokeParticles;
 
     [SerializeField]
     List<AudioClipInfo> firePutOutInfoClips;
@@ -93,6 +95,10 @@ public class CropTile : MonoBehaviour, IConsumable
         // Kill the current before starting a new one
         if (curRoutine != null)
             StopCoroutine(curRoutine);
+
+        // Fire is out - show smokes
+        if (burningStates.Contains(state))
+            smokeParticles?.Play();
 
         state = newState;
 
@@ -228,5 +234,10 @@ public class CropTile : MonoBehaviour, IConsumable
             ChangeState(State.Soil);
         else if (state == State.FoodWatered)
             ChangeState(State.SoilWatered);
+    }
+
+    public void Burn()
+    {
+        StruckedByLightning();
     }
 }

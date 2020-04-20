@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 using System.ComponentModel;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(ThoughtBubble))]
-public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
+public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible, IBurnable, IShockable
 {
     enum State
     {
@@ -43,6 +43,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
 
     // Particle Effects
     [SerializeField] ParticleSystem fireParticleSystem;
+    [SerializeField] ParticleSystem smokeParticleSystem;
 
     // Sounds Clips
     [SerializeField] List<AudioClipInfo> eatingClips;
@@ -211,9 +212,12 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
         navMeshAgent.velocity = Vector3.zero;
         navMeshAgent.isStopped = true; // prevent navmesh from moving the object
 
-        fireParticleSystem?.Stop();
-        navMeshAgent.speed = walkingSpeed;       
+        // Fire must have been put out
+        if(fireParticleSystem.isPlaying)
+            smokeParticleSystem?.Play();
 
+        fireParticleSystem?.Stop();        
+        navMeshAgent.speed = walkingSpeed;
         SwitchCoroutine(IdlingRoutine());
     }
 
@@ -247,7 +251,10 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
 
         thoughtBubble.SetThought(thought);
         yield return new WaitForSeconds(timeToPreviewThought);
-        thoughtBubble.DisableThought();
+
+        // Keep it while resources are low
+        if(!ResourcesLow)
+            thoughtBubble.DisableThought();
     }
 
     /// <summary>
@@ -326,7 +333,8 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
         {
             // Reset Strikes
             Strikes = 0;
-            StartCoroutine(ShowThoughtBubbleRoutine(ThoughtBubble.Thought.Happy));
+            var bubbleRoutine = ShowThoughtBubbleRoutine(ThoughtBubble.Thought.Happy);
+            StartCoroutine(bubbleRoutine);
 
             var infos = consumable.ResourceType == Resource.Food
                         ? eatingClips
@@ -337,6 +345,8 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
             var s = AudioManager.Instance.PlayRandom2DClip(infos);
             yield return new WaitForSeconds(s.clip.length);
             curConsumable.Consume();
+
+            StopCoroutine(bubbleRoutine);
         }
 
         AutoChangeState(consumed);
@@ -363,14 +373,20 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
             // Face it and book it!
             transform.LookAt(d);
             navMeshAgent.SetDestination(d);
-            AudioManager.Instance.PlayRandom2DClip(burningClips);
+            var audio = AudioManager.Instance.PlayRandom2DClip(burningClips);
 
-            while (Vector3.Distance(navMeshAgent.destination, transform.position) > 1f)
+            // But only run while there is still time
+            while (Time.time < t && Vector3.Distance(navMeshAgent.destination, transform.position) > 1f)
                 yield return new WaitForEndOfFrame();
+
+            if(audio != null)
+                audio.Stop();
 
             navMeshAgent.velocity = Vector3.zero;
         }
 
+        navMeshAgent.isStopped = true;
+        navMeshAgent.velocity = Vector3.zero;
         StartCoroutine(TriggerDeath());
     }
 
@@ -381,7 +397,17 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
         state = State.Diying;
         thoughtBubble.DisableThought();
         targetIcon.DisableTarget();
-        fireParticleSystem?.Stop();
+
+        // Death by fire - keep smoking
+        // Fire must have been put out
+        if (fireParticleSystem.isPlaying)
+        {
+            var main = smokeParticleSystem.main;
+            main.loop = true;
+
+            smokeParticleSystem?.Play();
+            fireParticleSystem?.Stop();
+        }
 
         // Death Cam!
         deathCamera.enabled = true;
@@ -502,29 +528,13 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible
             navMeshAgent.speed = walkingSpeed;
     }
 
-    public void OnPuddleStruckByLightning()
+    public void Burn()
     {
         StruckedByLightning();
     }
 
-    //Vector3 RandomNavmeshLocation(float radius)
-    //{
-    //    Vector3 randomDirection = Random.insideUnitSphere * radius;
-    //    randomDirection += transform.position;
-    //    NavMeshHit hit;
-    //    Vector3 finalPosition = Vector3.zero;
-    //    if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
-    //    {
-    //        finalPosition = hit.position;
-    //    }
-    //    return finalPosition;
-    //}
-
-    //void LookAtDestination()
-    //{
-    //    var dir = transform.position - navMeshAgent.destination;
-    //    var magnitude = dir.magnitude;
-    //    var angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-    //    curRotationAngle = Mathf.LerpAngle(curRotationAngle, angle, Time.deltaTime * rotationSpeed * magnitude);
-    //}
+    public void Shocked()
+    {
+        StruckedByLightning();
+    }
 }
