@@ -152,6 +152,15 @@ PrefabInstance:
       propertyPath: rainEffect
       value: 
       objectReference: {fileID: 6411899132371958050}
+    - target: {fileID: 1060095247, guid: 7800715b3a1f601488ae84ebe1a524b3, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: fbec565be6ab57040acbed8a10108010,
+        type: 2}
+    - target: {fileID: 1060095247, guid: 7800715b3a1f601488ae84ebe1a524b3, type: 3}
+      propertyPath: m_LayerMask.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 155453083332890718, guid: 7800715b3a1f601488ae84ebe1a524b3,
         type: 3}
       propertyPath: m_IsActive
@@ -217,6 +226,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1419631191802761416, guid: 7800715b3a1f601488ae84ebe1a524b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1597405283139069517, guid: 7800715b3a1f601488ae84ebe1a524b3,
         type: 3}
       propertyPath: m_IsActive
@@ -226,6 +240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Speed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372574866634868894, guid: 7800715b3a1f601488ae84ebe1a524b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3313727080865984943, guid: 7800715b3a1f601488ae84ebe1a524b3,
         type: 3}
@@ -296,6 +315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877938503584699605, guid: 7800715b3a1f601488ae84ebe1a524b3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 4986549178378011141, guid: 7800715b3a1f601488ae84ebe1a524b3,
         type: 3}
@@ -1018,6 +1042,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timeShockIsInEffect
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547787173722175659, guid: 828e052958ab9f548a51592a10fa90d4,
+        type: 3}
+      propertyPath: timeSheepIsInvincible
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 828e052958ab9f548a51592a10fa90d4, type: 3}

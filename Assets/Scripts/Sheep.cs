@@ -23,6 +23,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         Running,
         Burning,
         Diying,
+        Recovering,
     };    
 
     [SerializeField] NavMeshAgent navMeshAgent;    
@@ -52,7 +53,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     [SerializeField] List<AudioClipInfo> burningClips;
     [SerializeField] List<AudioClipInfo> deathClips;
 
-    IEnumerator activeCoroutine;
+    IEnumerator curRoutine;
     State state;
 
     /// <summary>
@@ -76,6 +77,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
     public int Strikes { get; private set; }
     public bool ResourcesLow { get { return Strikes == totalStrikes; } }
+    public bool IsInvincible { get; private set; }
 
     private void Awake()
     {
@@ -130,9 +132,10 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
             case State.Eating:
             case State.Drinking:
             case State.Idling:
+            case State.Recovering:
 
                 // Pursue the current resource - just target a new one
-                if(switchResource)
+                if (switchResource)
                     SwitchToNextResource();
 
                 curConsumable = GetRandomConsumable(curResource);
@@ -169,11 +172,11 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// <param name="newRoutine"></param>
     void SwitchCoroutine(IEnumerator newRoutine)
     {
-        if(activeCoroutine != null)
-            StopCoroutine(activeCoroutine);
+        if(curRoutine != null)
+            StopCoroutine(curRoutine);
 
-        activeCoroutine = newRoutine;
-        StartCoroutine(activeCoroutine);
+        curRoutine = newRoutine;
+        StartCoroutine(curRoutine);
         SetAnimatorToCurrentState();
     }
 
@@ -181,7 +184,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     {
         animController.SetBool("Idling", state == State.Idling);
         animController.SetBool("Walking", state == State.Walking);
-        animController.SetBool("Running", state == State.Running || state == State.Burning);
+        animController.SetBool("Running", state == State.Running || state == State.Burning || state == State.Recovering);
         animController.SetBool("Kneeling", state == State.Kneeling || state == State.Resting);
         animController.SetBool("Consuming", state == State.Eating || state == State.Drinking);
     }    
@@ -191,33 +194,63 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         if (state == State.Diying || state == State.Burning)
             return;
 
-        SwitchCoroutine(BurningRoutine());
+        if (!IsInvincible)
+            SwitchCoroutine(BurningRoutine());
     }
 
     public void RainedOn()
     {
         // Already rained on
-        if (state == State.Diying || state == State.Idling || state == State.Resting)
+        if (state == State.Diying || state == State.Idling || state == State.Resting || state == State.Recovering)
             return;
 
-        // Stop it first
-        navMeshAgent.SetDestination(transform.position);
+        // Stop immedeatly
+        navMeshAgent.isStopped = true;
         navMeshAgent.velocity = Vector3.zero;
 
-        TransitionToIdle();
+        var go = Cloud.Instance.GetGrassUnderMouse();
+        go.GetComponent<IDousable>()?.RainedOn();
+
+        if (state != State.Burning)
+            SwitchCoroutine(IdlingRoutine());
+        else
+            SwitchCoroutine(RecoveryRoutine(go.transform.position));     
     }
 
-    void TransitionToIdle()
+    /// <summary>
+    /// Routine for recovering from being burned where the sheep is invulnerable 
+    /// as well as makes it wait a bit before trying to at it again
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator RecoveryRoutine(Vector3 destination)
     {
+        state = State.Recovering;
+
+        IsInvincible = true;
+        fireParticleSystem?.Stop();
+        smokeParticleSystem?.Play();
+
+        // Run to the mouse is on since it should be safe now that there's water on it
+        navMeshAgent.speed = runningSpeed;
+        navMeshAgent.isStopped = false;
+
+        var go = Cloud.Instance.GetGrassUnderMouse();
+        navMeshAgent.SetDestination(destination);
+
+        // Wait to reach the destination
+        while (Vector3.Distance(navMeshAgent.destination, transform.position) > .01f)
+            yield return new WaitForEndOfFrame();
+
+        // Fully Stop
+        animController.SetBool("Idling", true);        
         navMeshAgent.velocity = Vector3.zero;
-        navMeshAgent.isStopped = true; // prevent navmesh from moving the object
+        yield return new WaitForEndOfFrame();
 
-        // Fire must have been put out
-        if(fireParticleSystem.isPlaying)
-            smokeParticleSystem?.Play();
+        transform.LookAt(curConsumable.gameObject.transform);
+        yield return new WaitForEndOfFrame();
 
-        fireParticleSystem?.Stop();        
-        navMeshAgent.speed = walkingSpeed;
+        IsInvincible = false;
+
         SwitchCoroutine(IdlingRoutine());
     }
 
@@ -227,16 +260,22 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// <returns></returns>
     IEnumerator IdlingRoutine()
     {
-        state = State.Idling;
+        if (!IsInvincible)
+        {
+            state = State.Idling;
+            navMeshAgent.speed = walkingSpeed;
+            navMeshAgent.isStopped = true;
+            navMeshAgent.velocity = Vector3.zero;
 
-        var info = AudioManager.Instance.GetRandomAudioClipInfo(restingClips);
-        AudioManager.Instance.Play2DSound(info.clip, info.volume);
-        yield return new WaitForSeconds(info.clip.length);
+            var info = AudioManager.Instance.GetRandomAudioClipInfo(restingClips);
+            AudioManager.Instance.Play2DSound(info.clip, info.volume);
+            yield return new WaitForSeconds(info.clip.length);
 
-        // Ensures the sheep can walk again
-        navMeshAgent.isStopped = false;
+            // Ensures the sheep can walk again
+            navMeshAgent.isStopped = false;
 
-        AutoChangeState(false);
+            AutoChangeState(false);
+        } 
     }
 
     /// <summary>
@@ -266,6 +305,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     {
         state = State.Walking;
         navMeshAgent.SetDestination(destination);
+        navMeshAgent.isStopped = false;
 
         ThoughtBubble.Thought thought = curThought;
         switch(curResource)
@@ -365,7 +405,9 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
         fireParticleSystem?.Play();
         navMeshAgent.speed = runningSpeed;
-        while(Time.time < t)
+        navMeshAgent.isStopped = false;
+
+        while (Time.time < t)
         {
             // Get Random destination
             var d = GetRandomConsumable().gameObject.transform.position;

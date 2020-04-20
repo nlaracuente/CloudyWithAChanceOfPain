@@ -8,6 +8,7 @@ public class FieldTileEffects : MonoBehaviour
         Puddle,
         Shock,
         None,
+        Smoke,
     }
 
     [SerializeField]
@@ -44,6 +45,9 @@ public class FieldTileEffects : MonoBehaviour
         curEffect = effect;
         if(effect == Effect.Shock)
             shockedParticles?.Play();
+
+        if (effect == Effect.Smoke)
+            smokeParticles?.Play();
     }
 
     public void DisableEffects()

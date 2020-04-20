@@ -40,6 +40,8 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable, IBurnable, 
 
     State state = State.Grass;
 
+    bool IsInvisible { get; set; }
+
     private void Update()
     {
         if (LevelController.Instance.IsGameOver)
@@ -55,20 +57,32 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable, IBurnable, 
         {
             case State.Grass:
                 state = State.Puddle;
-                fieldEffects.ShowEffect(FieldTileEffects.Effect.Puddle);
-                AudioManager.Instance.PlayRandom2DClip(puddleClipInfos);
                 break;
 
             case State.Fire:
                 state = State.Grass;
-                fieldEffects.DisableEffects();
+                fieldEffects.PlayParticleEffect(FieldTileEffects.Effect.Smoke);
                 AudioManager.Instance.PlayRandom2DClip(firePutOutClipInfos);
+                StartCoroutine(DousedRoutine());
                 break;
         }
+
+        AudioManager.Instance.PlayRandom2DClip(puddleClipInfos);
+        fieldEffects.ShowEffect(FieldTileEffects.Effect.Puddle);        
+    }
+
+    IEnumerator DousedRoutine()
+    {
+        IsInvisible = true;
+        yield return new WaitForSeconds(LevelController.Instance.TimeSheepIsInvincible);
+        IsInvisible = false;
     }
 
     public void StruckedByLightning()
     {
+        if (IsInvisible)
+            return;
+
         switch (state)
         {
             case State.Grass:

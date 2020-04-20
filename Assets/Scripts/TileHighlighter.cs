@@ -2,7 +2,6 @@
 
 public class TileHighlighter : MonoBehaviour
 {
-    [SerializeField] LayerMask clickableLayer;
     [SerializeField] GameObject highlighter;
 
     // Update is called once per frame
@@ -19,17 +18,14 @@ public class TileHighlighter : MonoBehaviour
 
     void UpdatePosition()
     {
-        Ray ray = LevelController.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (!Physics.Raycast(ray, out hit, Mathf.Infinity, clickableLayer))
+        var go = Cloud.Instance.GetClickableObjectUnderMouse();
+        if (go == null)
             highlighter.SetActive(false);
-
-        if (hit.transform == null)
-            return;
-
-        var xPos = hit.transform.position;
-        transform.position = new Vector3(xPos.x, transform.position.y, xPos.z);
-        highlighter.SetActive(true);
+        else
+        {
+            var xPos = go.transform.position;
+            transform.position = new Vector3(xPos.x, transform.position.y, xPos.z);
+            highlighter.SetActive(true);
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Cloud : MonoBehaviour
+public class Cloud : Singleton<Cloud>
 {
     enum State
     {
@@ -154,14 +154,12 @@ public class Cloud : MonoBehaviour
 
     void PlayEffect(Effect effect)
     {
-        Ray ray = LevelController.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        var go = GetClickableObjectUnderMouse();
 
-        //IConsumable consumable = default;
-        if (!Physics.Raycast(ray, out hit, Mathf.Infinity, clickableLayer))
+        if (go == null)
             return;
 
-        var xPos = hit.transform.position;
+        var xPos = go.transform.position;
         var position = new Vector3(xPos.x, 0, xPos.z);
 
         if (effect == Effect.Lightining)
@@ -187,6 +185,31 @@ public class Cloud : MonoBehaviour
                 rainEffect.Play();
             }   
         }
+    }
+
+    public GameObject GetClickableObjectUnderMouse()
+    {
+        Ray ray = LevelController.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (!Physics.Raycast(ray, out hit, Mathf.Infinity, clickableLayer))
+            return null;
+
+        return hit.transform?.gameObject;
+    }
+
+    public GrassFieldTile GetGrassUnderMouse()
+    {
+        Ray ray = LevelController.Instance.MainCamera.ScreenPointToRay(Input.mousePosition);
+        var hits = Physics.RaycastAll(ray, Mathf.Infinity, clickableLayer);
+
+        foreach (var hit in hits)
+        {
+            if (hit.transform?.GetComponentInParent<GrassFieldTile>())
+                return hit.transform.GetComponentInParent<GrassFieldTile>();
+        }
+
+        return null;
     }
 
     void TriggerEffect(Effect effect)
