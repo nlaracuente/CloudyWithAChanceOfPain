@@ -3,6 +3,6 @@
 public interface IResourceTargetable
 {
     bool IsAvailable { get; }
-    Transform GetAccessPoint();
+    Transform GetAccessPoint(bool isInDanger = false);
     void SetAccessPoint(Transform accessPoint);
 }

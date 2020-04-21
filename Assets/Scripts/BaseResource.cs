@@ -6,6 +6,9 @@ abstract public class BaseResource : MonoBehaviour, IConsumable, IResourceTarget
     [SerializeField]
     Transform accessPoints;
 
+    [SerializeField]
+    protected TargetResourceIcon targetIcon;
+
     protected Queue<Transform> availableAccessPoints;
     abstract public bool IsConsumable { get; }
     abstract public Resource ResourceType { get; }
@@ -24,6 +27,8 @@ abstract public class BaseResource : MonoBehaviour, IConsumable, IResourceTarget
             var child = accessPoints.GetChild(i);
             availableAccessPoints.Enqueue(child);
         }
+
+        targetIcon = GetComponentInChildren<TargetResourceIcon>();
     }
 
     public bool IsAvailable
@@ -35,15 +40,26 @@ abstract public class BaseResource : MonoBehaviour, IConsumable, IResourceTarget
     /// Defaults to self to be safe
     /// </summary>
     /// <returns></returns>
-    public Transform GetAccessPoint()
+    public Transform GetAccessPoint(bool isInDanger = false)
     {
+        if (IsAvailable)
+            targetIcon?.ShowIcon(isInDanger);
+
         return IsAvailable ? availableAccessPoints.Dequeue() : transform;
     }
 
     public void SetAccessPoint(Transform accessPoint)
     {
+        if (accessPoint == null)
+            return;
+
         if (!availableAccessPoints.Contains(accessPoint))
             availableAccessPoints.Enqueue(accessPoint);
+
+        // No longer targeted
+        if (availableAccessPoints.Count == accessPoints.childCount)
+            targetIcon.HideIcon();
+        
     }
 
     abstract public void SetAsNotConsumable();

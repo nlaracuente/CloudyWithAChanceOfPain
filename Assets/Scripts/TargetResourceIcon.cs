@@ -1,22 +1,30 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class TargetResourceIcon : MonoBehaviour
 {
     [SerializeField]
     GameObject iconContainer;
 
+    [SerializeField] Image icon;
+    [SerializeField] Sprite normalIcon;
+    [SerializeField] Sprite dangerIcon;
+
     private void Awake()
     {
         iconContainer.SetActive(false);
     }
 
-    public void SetTarget(Transform target)
+    public void ShowIcon(bool isInDanger = false)
     {
-        transform.position = new Vector3(target.position.x, transform.position.y, target.position.z);
+        // Don't change the high alert
+        if (icon.sprite != dangerIcon)
+            icon.sprite = isInDanger ? dangerIcon : normalIcon;
+
         iconContainer.SetActive(true);
     }
 
-    public void DisableTarget()
+    public void HideIcon()
     {
         iconContainer.SetActive(false);
     }

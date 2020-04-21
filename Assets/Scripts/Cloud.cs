@@ -96,12 +96,18 @@ public class Cloud : Singleton<Cloud>
 
         if (Input.GetMouseButtonDown(leftClick))
         {
+            if (GetClickableObjectUnderMouse() == null)
+                return;
+
             ChangeState(State.Lightning);            
             PlayEffect(Effect.Lightining);
             TriggerEffect(Effect.Lightining);
         }
         else if (Input.GetMouseButton(rightClick))
         {
+            if (GetClickableObjectUnderMouse() == null)
+                return;
+
             ChangeState(State.Raining);
             PlayEffect(Effect.Rain);
             TriggerEffect(Effect.Rain);

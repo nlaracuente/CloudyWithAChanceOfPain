@@ -4,22 +4,24 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class Wolf : MonoBehaviour
+public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
 {   
     enum State
     {
-        Stalking,
-        Walking,
-        Running,
+        Idling,
+        Chasing,
         Attacking,
         Diying,
     };
 
     [SerializeField] NavMeshAgent navMeshAgent;
-    [SerializeField] float walkingSpeed = 5f;
-    [SerializeField] float runningSpeed = 5f;
+    [SerializeField] float chasingSpeed = 8f;
+    [SerializeField] float distanceToSheep = 1f;
+    [SerializeField] float attackDuration = 3f;
+    [SerializeField] float deathDuration = 2f;
     [SerializeField] Animator animController;
     [SerializeField] Camera killCamera;
+    [SerializeField] WolfMouthTrigger mouthTrigger;
 
     // Particle Effects
     [SerializeField] ParticleSystem fireParticleSystem;
@@ -40,38 +42,123 @@ public class Wolf : MonoBehaviour
         if (navMeshAgent == null)
             navMeshAgent = GetComponent<NavMeshAgent>();
 
+        if (mouthTrigger == null)
+            mouthTrigger = GetComponentInChildren<WolfMouthTrigger>();
+
         killCamera.enabled = false;
     }
 
     void Start()
     {
-        state = State.Stalking;
-        targetSheep = FindObjectOfType<Sheep>();
-        fireParticleSystem?.Stop();
+        ChangeRoutine(FindTargetRoutine());
     }
 
-    private void Update()
+    void ChangeRoutine(IEnumerator routine)
     {
-        if (LevelController.Instance.IsGameOver || targetSheep.IsNotMoving)
-        {
-            navMeshAgent.velocity = Vector3.zero;
-            navMeshAgent.isStopped = true;
+        if (activeCoroutine != null)
+            StopCoroutine(activeCoroutine);
 
-            animController.SetBool("Walking", true);
-            animController.SetBool("Running", false);
-            return;
+        activeCoroutine = routine;
+        StartCoroutine(activeCoroutine);
+    }
+
+    IEnumerator FindTargetRoutine()
+    {
+        if (LevelController.Instance.IsGameOver)
+            ChangeRoutine(IdleRoutine());
+
+        state = State.Idling;
+        animController.SetBool("Idling", true);
+        fireParticleSystem?.Stop();
+
+        while (targetSheep == null && !targetSheep.IsDead)
+        {
+            yield return new WaitForEndOfFrame();
+            targetSheep = SheepManager.Instance.GetTargetSheep();
+
+            if (LevelController.Instance.IsGameOver)
+            {
+                ChangeRoutine(IdleRoutine());
+                break;
+            }   
         }
 
-        navMeshAgent.isStopped = false;
-        animController.SetBool("Walking", !targetSheep.IsRunning);
-        animController.SetBool("Running", targetSheep.IsRunning);
-
-        navMeshAgent.speed = targetSheep.IsRunning ? runningSpeed : walkingSpeed;
-        navMeshAgent.SetDestination(targetSheep.transform.position);
+        ChangeRoutine(ChaseRoutine());
     }
 
-    private void OnTriggerEnter(Collider other)
+    IEnumerator ChaseRoutine()
     {
-        //if(other.gameObject.GetComponent<Sheep>())
+        state = State.Chasing;
+        animController.SetBool("Running", true);
+        navMeshAgent.isStopped = false;
+        navMeshAgent.speed = chasingSpeed;
+
+        while (!LevelController.Instance.IsGameOver
+               && (targetSheep != null || Vector3.Distance(transform.position, targetSheep.transform.position) > distanceToSheep))
+            yield return new WaitForEndOfFrame();
+
+        if (targetSheep == null)
+            ChangeRoutine(FindTargetRoutine());
+        else
+            ChangeRoutine(AttackRoutine());
+    }
+
+    IEnumerator AttackRoutine()
+    {
+        state = State.Attacking;
+        animController.SetTrigger("Attack");
+        navMeshAgent.isStopped = true;
+        navMeshAgent.velocity = Vector3.zero;
+
+        yield return new WaitForSeconds(attackDuration);
+
+        var sheep = mouthTrigger?.SheepInTrigger;
+        if (sheep == null || sheep.IsDead)
+            ChangeRoutine(FindTargetRoutine());
+
+        SheepManager.Instance.SheepDied(sheep);
+
+        ChangeRoutine(FindTargetRoutine());
+    }
+
+    IEnumerator IdleRoutine()
+    {
+        state = State.Idling;
+        animController.SetBool("Idling", true);
+        navMeshAgent.isStopped = true;
+        navMeshAgent.velocity = Vector3.zero;
+        yield return null;
+    } 
+
+    IEnumerator DeathRoutine()
+    {
+        state = State.Diying;
+        animController.SetTrigger("Death");
+        navMeshAgent.isStopped = true;
+        navMeshAgent.velocity = Vector3.zero;
+        yield return new WaitForSeconds(deathDuration);
+        Destroy(gameObject);
+
+    }
+
+    public void StruckedByLightning()
+    {
+        TriggerDeath();
+    }
+
+    public void Shocked()
+    {
+        TriggerDeath();
+    }
+
+    public void Burn()
+    {
+        TriggerDeath();
+    }
+
+    void TriggerDeath()
+    {
+        if (state != State.Diying)
+            ChangeRoutine(DeathRoutine());
     }
 }

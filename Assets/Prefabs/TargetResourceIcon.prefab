@@ -295,3 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconContainer: {fileID: 3516146719433685870}
+  icon: {fileID: 6586516761541016005}
+  normalIcon: {fileID: 21300000, guid: 5013b6ef4c5dcf64c9f37d444b5dc92b, type: 3}
+  dangerIcon: {fileID: 21300000, guid: fce70a9eaa3720548977578e6719ab72, type: 3}

@@ -59,16 +59,15 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     Resource curResourceType;
     BaseResource curResource;
 
+    Transform curResourceAccessPoint;
+
     /// <summary>
     /// The current consumable the sheep has targeted
     /// </summary>
     BaseResource curConsumable;
 
     ThoughtBubble thoughtBubble;
-
     ThoughtBubble.Thought curThought;
-
-    TargetResourceIcon targetIcon;
 
     public bool IsRunning { get { return state == State.Running || state == State.Burning; } }
     public bool IsNotMoving { get { return navMeshAgent.velocity == Vector3.zero; } }
@@ -76,6 +75,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     public int Strikes { get; private set; }
     public bool ResourcesLow { get { return Strikes == totalStrikes; } }
     public bool IsInvincible { get; private set; }
+    public bool IsDead { get { return state == State.Diying; } }
 
     private void Awake()
     {
@@ -93,9 +93,10 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// </summary>
     void Start()
     {
-        targetIcon = FindObjectOfType<TargetResourceIcon>();
+        SheepManager.Instance.AddSheep(this);
+        AudioManager.Instance.PlayRandom2DClip(restingClips);
 
-        targetIcon.DisableTarget();
+
         thoughtBubble.DisableThought();
 
         state = State.Resting;
@@ -137,7 +138,6 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
                     SwitchToNextResource();
 
                 curResource = GetAvailableResource(curResourceType);
-                targetIcon.SetTarget(curResource.gameObject.transform);
                 SwitchCoroutine(WalkRoutine());
                 break;
         }
@@ -206,6 +206,9 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         navMeshAgent.isStopped = true;
         navMeshAgent.velocity = Vector3.zero;
 
+        // Restore since it was reset
+        curResource?.SetAccessPoint(curResourceAccessPoint);
+
         var go = Cloud.Instance.GetGrassUnderMouse();
         go.GetComponent<IDousable>()?.RainedOn();
 
@@ -244,8 +247,11 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         navMeshAgent.velocity = Vector3.zero;
         yield return new WaitForEndOfFrame();
 
-        transform.LookAt(curConsumable.gameObject.transform);
-        yield return new WaitForEndOfFrame();
+        if (curConsumable != null) 
+        {
+            transform.LookAt(curConsumable.gameObject.transform);
+            yield return new WaitForEndOfFrame();
+        }
 
         IsInvincible = false;
 
@@ -301,10 +307,10 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// <returns></returns>
     IEnumerator WalkRoutine()
     {
-        var accessPoint = curResource.GetAccessPoint();
+        curResourceAccessPoint = curResource.GetAccessPoint(ResourcesLow);
 
         state = State.Walking;
-        navMeshAgent.SetDestination(accessPoint.position);
+        navMeshAgent.SetDestination(curResourceAccessPoint.position);
         navMeshAgent.isStopped = false;
 
         ThoughtBubble.Thought thought = curThought;
@@ -336,7 +342,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         transform.LookAt(curResource.gameObject.transform);
         yield return new WaitForEndOfFrame();
 
-        curResource.SetAccessPoint(accessPoint);
+        curResource.SetAccessPoint(curResourceAccessPoint);
 
         // Continue
         AutoChangeState();
@@ -403,9 +409,11 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// <returns></returns>
     IEnumerator BurningRoutine()
     {
+        // Reset access point
+        curResource.SetAccessPoint(curResourceAccessPoint);
+
         state = State.Burning;
         thoughtBubble.DisableThought();
-        targetIcon.DisableTarget();
         var t = Time.time + timeBurning;
 
         fireParticleSystem?.Play();
@@ -452,12 +460,10 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
     IEnumerator TriggerDeath(bool isGameOver = false)
     {
-
         LevelController.Instance.IsGameOver = isGameOver;
 
         state = State.Diying;
         thoughtBubble.DisableThought();
-        targetIcon.DisableTarget();
 
         // Death by fire - keep smoking
         // Fire must have been put out
@@ -490,7 +496,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         if (isGameOver)
             GameManager.Instance.GameOver();
         else
-            DestroyObject(gameObject);
+            Destroy(gameObject);
     }
 
     ///// <summary>
