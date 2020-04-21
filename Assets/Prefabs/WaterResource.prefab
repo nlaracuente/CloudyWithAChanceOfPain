@@ -1183,7 +1183,7 @@ MonoBehaviour:
     volume: 0
   fillingUpClipInfo:
     clip: {fileID: 8300000, guid: 07c90907c3a518d438b14007aacf2c1d, type: 3}
-    volume: 0.75
+    volume: 1
 --- !u!208 &4279489594855073014
 NavMeshObstacle:
   m_ObjectHideFlags: 0

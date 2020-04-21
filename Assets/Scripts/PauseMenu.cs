@@ -38,7 +38,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Exit()
     {
-        GameManager.Instance.QuitGame();
+        GameManager.Instance.Title();
+        isOpened = true;
+        isOpened = !isOpened;
+        Time.timeScale = isOpened ? 0f : 1f;
     }
 }
 

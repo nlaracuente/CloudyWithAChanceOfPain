@@ -465,6 +465,9 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         state = State.Diying;
         thoughtBubble.DisableThought();
 
+        navMeshAgent.isStopped = true;
+        navMeshAgent.velocity = Vector3.zero;
+
         // Death by fire - keep smoking
         // Fire must have been put out
         if (fireParticleSystem.isPlaying)
@@ -482,7 +485,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
             deathCamera.enabled = true;
             LevelController.Instance.MainCamera = deathCamera;
             Camera.main.enabled = false;
-        }        
+        }
         
         SetAnimatorToCurrentState();
 

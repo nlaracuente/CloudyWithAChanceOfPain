@@ -63,7 +63,7 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable, IBurnable, 
                 state = State.Grass;
                 fieldEffects.PlayParticleEffect(FieldTileEffects.Effect.Smoke);
                 AudioManager.Instance.PlayRandom2DClip(firePutOutClipInfos);
-                StartCoroutine(DousedRoutine());
+                //StartCoroutine(DousedRoutine());
                 break;
         }
 
@@ -105,11 +105,10 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable, IBurnable, 
 
     IEnumerator SpreadFireRoutine()
     {
-        while (state == State.Fire)
-        {
-            yield return new WaitForSeconds(LevelController.Instance.TimeBeforeFireSpreads);
+        yield return new WaitForSeconds(LevelController.Instance.TimeBeforeFireSpreads);
+
+        if(state == State.Fire)
             fireSpreader?.Spread();
-        }
     }
 
     /// <summary>
@@ -138,6 +137,8 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable, IBurnable, 
         if (state != State.Puddle || state == State.Shocked)
             return;
 
+        state = State.Shocked;
+
         // Skeep Spreading       
         curRoutine = ShockedRoutine();
         StartCoroutine(curRoutine);
@@ -151,7 +152,7 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable, IBurnable, 
     /// <returns></returns>
     IEnumerator ShockedRoutine()
     {
-        state = State.Shocked;        
+        state = State.Shocked;
         lightningSpreader?.Spread();
         fieldEffects.PlayParticleEffect(FieldTileEffects.Effect.Shock);
         yield return new WaitForSeconds(LevelController.Instance.TimeShockIsInEffect);

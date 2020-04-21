@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0dcb4c3dd8a9d40aca1f7d6df65b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_isPersistent: 0
   clickableLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -111,7 +112,7 @@ MonoBehaviour:
     volume: 1
   rainClipInfo:
     clip: {fileID: 8300000, guid: e3c9f374aadec4846b05e727712b1248, type: 3}
-    volume: 0.75
+    volume: 1
   sprites:
   - state: 0
     sprite: {fileID: 21300000, guid: b8d0b36859c828b4dbf777d3cbf2e136, type: 3}

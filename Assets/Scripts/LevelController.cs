@@ -19,6 +19,8 @@ public class LevelController : Singleton<LevelController>
     float timeSheepIsInvincible = 1f;
     public float TimeSheepIsInvincible { get { return timeSheepIsInvincible; } }
 
+    public bool AllWolvesSpawned = false;
+
     private void Start()
     {
         MainCamera = Camera.main;
@@ -28,7 +30,10 @@ public class LevelController : Singleton<LevelController>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+        if (!IsGameOver && AllWolvesSpawned && FindObjectsOfType<Wolf>().Length == 0)
+        {
+            IsGameOver = true;
+            GameManager.Instance.GameCompleted();
+        }
     }
 }

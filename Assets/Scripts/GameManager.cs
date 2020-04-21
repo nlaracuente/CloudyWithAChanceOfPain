@@ -18,6 +18,10 @@ public class GameManager : Singleton<GameManager>
 
     public SceneId CurrentScene { get { return (SceneId)SceneManager.GetActiveScene().buildIndex; } }
 
+    public void Title()
+    {
+        StartCoroutine(TransitionToScene(SceneId.MainMenu));
+    }
     public void Play()
     {
         StartCoroutine(TransitionToScene(SceneId.Level));
