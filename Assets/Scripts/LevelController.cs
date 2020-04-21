@@ -19,7 +19,8 @@ public class LevelController : Singleton<LevelController>
     float timeSheepIsInvincible = 1f;
     public float TimeSheepIsInvincible { get { return timeSheepIsInvincible; } }
 
-    public bool AllWolvesSpawned = false;
+    public bool AllSheepsSpawned { get; set; }
+    public bool AllWolvesSpawned { get; set; }
 
     private void Start()
     {
