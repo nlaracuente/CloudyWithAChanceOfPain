@@ -25,16 +25,13 @@ public class SheepManager : Singleton<SheepManager>
 
     public void SheepDied(Sheep sheep)
     {
-        // Already handled
-        if (!sheeps.Contains(sheep))
-            return;
-
         if (sheeps.Count <= 1)
             sheep.TriggerGameOverSequence();
         else
             sheep.Die();
 
-        sheeps.Remove(sheep);
+        if (sheeps.Contains(sheep))
+            sheeps.Remove(sheep);
     }
 
     public Sheep GetTargetSheep()

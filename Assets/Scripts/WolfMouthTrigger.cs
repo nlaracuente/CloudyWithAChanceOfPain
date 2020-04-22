@@ -16,11 +16,13 @@ public class WolfMouthTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        SheepInTrigger = other.GetComponent<Sheep>();
+        if (other.GetComponent<Sheep>() != null)
+            SheepInTrigger = other.GetComponent<Sheep>();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        SheepInTrigger = null;
+        if (other.GetComponent<Sheep>() != null)
+            SheepInTrigger = null;
     }
 }

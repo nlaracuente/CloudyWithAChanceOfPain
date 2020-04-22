@@ -27,5 +27,8 @@ public class TargetResourceIcon : MonoBehaviour
     public void HideIcon()
     {
         iconContainer.SetActive(false);
+
+        // Reset high alertt
+        icon.sprite = normalIcon;
     }
 }

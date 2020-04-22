@@ -3,22 +3,14 @@ using UnityEngine;
 
 public class SheepSpawner : MonoBehaviour
 {
-    [SerializeField]
-    protected Transform spawnPoint;
+    [SerializeField] Transform spawnPoint;
+    [SerializeField] GameObject sheepPrefab;
+    [SerializeField] float timeBetweenEachSheepSpawning = 30f;
+    [SerializeField] int totalSheepsToSpawn = 10;
 
-    [SerializeField]
-    protected GameObject sheepPrefab;
+    public int TotalSheeps { get { return totalSheepsToSpawn; } }
 
-    [SerializeField]
-    protected float timeBeforeFirstSheep = 15f;
-
-    [SerializeField]
-    protected float timeBeforeSpawningNextWolf = 30f;
-
-    [SerializeField]
-    protected int totalSheepsToSpawn = 10;
-
-    protected virtual void Start()
+    void Start()
     {
         if(sheepPrefab == null)
         {
@@ -29,19 +21,19 @@ public class SheepSpawner : MonoBehaviour
         StartCoroutine(SpawnRoutine());
     }
 
-    protected virtual IEnumerator SpawnRoutine()
+    IEnumerator SpawnRoutine()
     {
-        yield return new WaitForSeconds(timeBeforeFirstSheep);
-
         var total = 0;
         while (total < totalSheepsToSpawn && !LevelController.Instance.IsGameOver)
         {
-            yield return new WaitForSeconds(timeBeforeSpawningNextWolf);
-
-            Instantiate(sheepPrefab, spawnPoint.position, spawnPoint.rotation, transform);
+            yield return new WaitForSeconds(timeBetweenEachSheepSpawning);
+            var sheep = Instantiate(sheepPrefab, spawnPoint.position, spawnPoint.rotation, transform).GetComponent<Sheep>();
+            sheep.PlayRandomSheepNoise();
+            
             total++;
         }
 
-        LevelController.Instance.AllSheepsSpawned = true;
+        if (!LevelController.Instance.IsGameOver)
+            LevelController.Instance.AllSheepsSpawned = true;
     }
 }

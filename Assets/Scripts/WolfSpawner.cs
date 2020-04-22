@@ -8,8 +8,8 @@ class WolfSpawner : MonoBehaviour
     [SerializeField] Transform spawnPoints;
 
     [SerializeField] GameObject wolvePrefab;
-    [SerializeField] float timeBeforeFirstWolf = 15f;
-    [SerializeField] float timeBetweenWaves = 30f;
+    [SerializeField] float timeBeforeFirstWolfSpawns = 15f;
+    [SerializeField] float timeBetweenEachWaves = 30f;
     [SerializeField] int totalWaves = 10;
     [SerializeField] int totalWolvesPerWaves = 1;
     [SerializeField] float totalWolvesPerWavesMultiplier = .2f;   
@@ -18,7 +18,14 @@ class WolfSpawner : MonoBehaviour
     float timeBeforeSpawningNextWolf = .1f;
 
     List<Transform> spawningPoints;
-    int seed;
+
+    // Randomize the seed each time
+    int Seed { 
+        get {
+            var rand = new System.Random(Guid.NewGuid().GetHashCode());
+            return rand.Next();
+        } 
+    }
 
     void Start()
     {
@@ -27,9 +34,6 @@ class WolfSpawner : MonoBehaviour
             Debug.Log($"{name}: has no wolf prefab found");
             return;
         }
-
-        var rand = new System.Random(Guid.NewGuid().GetHashCode());
-        seed = rand.Next();
 
         spawningPoints = SetSpawningPoints(spawnPoints);
         StartCoroutine(SpawnRoutine());
@@ -49,30 +53,40 @@ class WolfSpawner : MonoBehaviour
 
     IEnumerator SpawnRoutine()
     {        
-        yield return new WaitForSeconds(timeBeforeFirstWolf);
+        yield return new WaitForSeconds(timeBeforeFirstWolfSpawns);
 
         var waveNumber = 1;
-        while (waveNumber < totalWaves && !LevelController.Instance.IsGameOver)
+        while (waveNumber <= totalWaves && !LevelController.Instance.IsGameOver)
         {
             // Wave prep
-            var totalWolves = Mathf.FloorToInt((waveNumber * totalWolvesPerWaves) * totalWolvesPerWavesMultiplier);
+            var totalWolves = waveNumber++ * totalWolvesPerWaves;// Mathf.FloorToInt((waveNumber * totalWolvesPerWaves) * totalWolvesPerWavesMultiplier);
             totalWolves = Mathf.Clamp(totalWolves, totalWolvesPerWaves, spawningPoints.Count - 1);
             
             // Randomize Spawning Order
-            var randPoints = ArrayUtility.ShuffleArray(spawningPoints.ToArray(), seed);
+            var randPoints = ArrayUtility.ShuffleArray(spawningPoints.ToArray(), Seed);
 
             var spawned = 0;
             while(spawned < totalWolves)
             {
                 var point = randPoints[spawned++];
-                Instantiate(wolvePrefab, point.position, point.rotation, transform);
+                var wolf = Instantiate(wolvePrefab, point.position, point.rotation, transform).GetComponent<Wolf>();
+
+                //// Wait until it can move before we spawn the next
+                //// Meaning, we cannot spawn another wolf until this one has a target
+                //Sheep sheep = SheepManager.Instance.GetTargetSheep();
+                //while (sheep == null)
+                //{
+                //    yield return new WaitForEndOfFrame();
+                //}
+
+                //wolf.SetInitialTarget(sheep);
                 yield return new WaitForSeconds(timeBeforeSpawningNextWolf);
             }
 
-            yield return new WaitForSeconds(timeBetweenWaves);
+            yield return new WaitForSeconds(timeBetweenEachWaves);
         }
 
-        if (waveNumber == totalWaves)
+        if (!LevelController.Instance.IsGameOver)
             LevelController.Instance.AllWolvesSpawned = true;
     }
 }

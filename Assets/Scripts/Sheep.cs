@@ -72,7 +72,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     public bool IsRunning { get { return state == State.Running || state == State.Burning; } }
     public bool IsNotMoving { get { return navMeshAgent.velocity == Vector3.zero; } }
 
-    public int Strikes { get; private set; }
+    public int Strikes { get; private set; } = 0;
     public bool ResourcesLow { get { return Strikes == totalStrikes; } }
     public bool IsInvincible { get; private set; }
     public bool IsDead { get { return state == State.Diying; } }
@@ -94,9 +94,6 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     void Start()
     {
         SheepManager.Instance.AddSheep(this);
-        AudioManager.Instance.PlayRandom2DClip(restingClips);
-
-
         thoughtBubble.DisableThought();
 
         state = State.Resting;
@@ -104,11 +101,20 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         AutoChangeState();
     }
 
+    public void PlayRandomSheepNoise()
+    {
+        AudioManager.Instance.PlayRandom2DClip(restingClips);
+    }
+
     /// <summary>
     /// Changes the completed routine to the routine that follows it
     /// </summary>
     void AutoChangeState(bool switchResource = true)
     {
+        // Ignore when dead or game over
+        if (LevelController.Instance.IsGameOver || IsDead)
+            return;
+
         if (Strikes > totalStrikes)
         {
             SheepManager.Instance.SheepDied(this);
@@ -170,7 +176,11 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
     /// <param name="newRoutine"></param>
     void SwitchCoroutine(IEnumerator newRoutine)
     {
-        if(curRoutine != null)
+        // Ignore when dead or game over
+        if (LevelController.Instance.IsGameOver || IsDead)
+            return;
+
+        if (curRoutine != null)
             StopCoroutine(curRoutine);
 
         curRoutine = newRoutine;
@@ -189,7 +199,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
     public void StruckedByLightning()
     {
-        if (state == State.Diying || state == State.Burning)
+        if (LevelController.Instance.IsGameOver || IsDead || state == State.Burning)
             return;
 
         if (!IsInvincible)
@@ -198,8 +208,12 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
     public void RainedOn()
     {
+        // Ignore when dead or game over
+        if (LevelController.Instance.IsGameOver || IsDead)
+            return;
+
         // Already rained on
-        if (state == State.Diying || state == State.Idling || state == State.Resting || state == State.Recovering)
+        if (state == State.Idling || state == State.Resting || state == State.Recovering)
             return;
 
         // Stop immedeatly
@@ -369,10 +383,11 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
         // To track whether the resource was consumed and we can change it
         // Since the state of the "IsConsumable" will change once consumed
-        bool consumed = resource.IsConsumable;
+        bool consumed = true;
 
         if (!resource.IsConsumable)
         {
+            consumed = false;
             yield return new WaitForSeconds(timeBeforeDisplayResourceNotFound);
             yield return StartCoroutine(ShowThoughtBubbleRoutine(ThoughtBubble.Thought.Hurt));
             Strikes++;
@@ -431,7 +446,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
             var audio = AudioManager.Instance.PlayRandom2DClip(burningClips);
 
             // But only run while there is still time
-            while (Time.time < t && Vector3.Distance(navMeshAgent.destination, transform.position) > 1f)
+            while (!IsDead && Time.time < t && Vector3.Distance(navMeshAgent.destination, transform.position) > 1f)
                 yield return new WaitForEndOfFrame();
 
             if(audio != null)
@@ -448,17 +463,19 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         SheepManager.Instance.SheepDied(this);
     }
 
-    public void TriggerGameOverSequence()
+    public void TriggerGameOverSequence(Wolf wolf = null)
     {
-        StartCoroutine(TriggerDeath(true));
+        if(!IsDead)
+            StartCoroutine(TriggerDeath(true, wolf));
     }
 
     public void Die()
     {
-        StartCoroutine(TriggerDeath());
+        if (!IsDead)
+            StartCoroutine(TriggerDeath());
     }
 
-    IEnumerator TriggerDeath(bool isGameOver = false)
+    IEnumerator TriggerDeath(bool isGameOver = false, Wolf wolf = null)
     {
         LevelController.Instance.IsGameOver = isGameOver;
 
@@ -467,6 +484,9 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
 
         navMeshAgent.isStopped = true;
         navMeshAgent.velocity = Vector3.zero;
+
+        // Restore last access point
+        curResource.SetAccessPoint(curResourceAccessPoint);
 
         // Death by fire - keep smoking
         // Fire must have been put out
@@ -479,12 +499,17 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
             fireParticleSystem?.Stop();
         }
 
-        // Death Cam!
+        // The camera is based on how this sheep died
         if (isGameOver) 
         {
-            deathCamera.enabled = true;
-            LevelController.Instance.MainCamera = deathCamera;
-            Camera.main.enabled = false;
+            if (wolf != null)
+                wolf.SetKillCamera();
+            else
+            {
+                deathCamera.enabled = true;
+                LevelController.Instance.MainCamera = deathCamera;
+                Camera.main.enabled = false;
+            }
         }
         
         SetAnimatorToCurrentState();
