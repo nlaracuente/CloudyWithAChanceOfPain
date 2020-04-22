@@ -2473,8 +2473,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821102944609753774}
-  - component: {fileID: 2138945199937054082}
-  - component: {fileID: 5060815038079831500}
   - component: {fileID: 3530647205654947018}
   m_Layer: 0
   m_Name: seeds
@@ -2502,39 +2500,6 @@ Transform:
   m_Father: {fileID: 4942021197063862263}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2138945199937054082
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786468703149191476}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7e61c6e3854e67f47bbbdc83951683e6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5060815038079831500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786468703149191476}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f120fdd88a1ff249a7ec6bd6ef3b9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 2138945199937054082}
-  animTrigger: Play
 --- !u!111 &3530647205654947018
 Animation:
   m_ObjectHideFlags: 0
@@ -2544,9 +2509,9 @@ Animation:
   m_GameObject: {fileID: 1786468703149191476}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d05c8863205e4c34c91ca64463497e34, type: 2}
+  m_Animation: {fileID: 7400000, guid: 700a5e44410cdb04d8c5894716627bd2, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: d05c8863205e4c34c91ca64463497e34, type: 2}
+  - {fileID: 7400000, guid: 700a5e44410cdb04d8c5894716627bd2, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -17095,12 +17060,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42df283b698e219498fa352969dce4b5, type: 3}
---- !u!4 &7534802777508651727 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9016139639127160319, guid: 42df283b698e219498fa352969dce4b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1553526431814358832}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4840043543515610020 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6243244702222658708, guid: 42df283b698e219498fa352969dce4b5,
@@ -17113,6 +17072,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1369c9ee395a2a4681a474775d89415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &7534802777508651727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9016139639127160319, guid: 42df283b698e219498fa352969dce4b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1553526431814358832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2060100238188165622
 PrefabInstance:
   m_ObjectHideFlags: 0

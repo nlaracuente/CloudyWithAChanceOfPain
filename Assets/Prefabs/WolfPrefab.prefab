@@ -143,7 +143,7 @@ SphereCollider:
   m_GameObject: {fileID: 5898214038438126309}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.55
   m_Center: {x: 0, y: 1.53, z: 2.49}
@@ -215,7 +215,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5.84
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8639584089346217847
 Rigidbody:
@@ -314,7 +314,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 9016139639127160316}
   m_Enabled: 1
   m_AgentTypeID: -334000983
-  m_Radius: 3
+  m_Radius: 2
   m_Speed: 8
   m_Acceleration: 25
   avoidancePriority: 99
@@ -326,7 +326,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &5731588099875694500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,8 +341,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 6723983242760957481}
   chasingSpeed: 20
-  distanceToSheep: 10
-  attackDuration: 1
+  distanceToSheep: 8
+  attackDuration: 0.5
+  attackSoundDelay: 0.25
   deathDuration: 2
   coolDownDuration: 0.1
   animController: {fileID: 6443541596269351789}

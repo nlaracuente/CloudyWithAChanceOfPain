@@ -299,12 +299,12 @@ MonoBehaviour:
   spawnPoints: {fileID: 2879656055114392356}
   wolvePrefab: {fileID: 9016139639127160316, guid: 45f0e3466efaac942b604749080ce1cd,
     type: 3}
-  timeBeforeFirstWolfSpawns: 15
-  timeBetweenEachWaves: 30
-  totalWaves: 10
+  timeBeforeFirstWolfSpawns: 7
+  timeBetweenEachWaves: 15
+  totalWaves: 8
   totalWolvesPerWaves: 1
   totalWolvesPerWavesMultiplier: 1.2
-  timeBeforeSpawningNextWolf: 0.1
+  timeBeforeSpawningNextWolf: 1
 --- !u!1 &2879656055134281225
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,13 +5,12 @@ public class WolfMouthTrigger : MonoBehaviour
     Collider trigger;
     public Sheep SheepInTrigger { get; private set; }
 
-    public bool EnableTrigger { set { trigger.enabled = value; } }
-
 
     private void Start()
     {
         trigger = GetComponent<Collider>();
         trigger.isTrigger = true;
+        trigger.enabled = true;
     }
 
     private void OnTriggerStay(Collider other)

@@ -57,6 +57,8 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable, IBurnable, 
         {
             case State.Grass:
                 state = State.Puddle;
+				AudioManager.Instance.PlayRandom2DClip(puddleClipInfos);
+				fieldEffects.ShowEffect(FieldTileEffects.Effect.Puddle);
                 break;
 
             case State.Fire:
@@ -67,8 +69,7 @@ public class GrassFieldTile : MonoBehaviour, IAttackable, IDousable, IBurnable, 
                 break;
         }
 
-        AudioManager.Instance.PlayRandom2DClip(puddleClipInfos);
-        fieldEffects.ShowEffect(FieldTileEffects.Effect.Puddle);        
+                
     }
 
     IEnumerator DousedRoutine()

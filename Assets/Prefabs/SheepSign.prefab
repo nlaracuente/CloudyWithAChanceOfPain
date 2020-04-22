@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -11
   m_Sprite: {fileID: 21300000, guid: 81b4c638f53319e49aa2318c407ecaf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -11
   m_Sprite: {fileID: 21300000, guid: 5045cfb444981f340b592791427b727a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -173,8 +173,8 @@ GameObject:
   - component: {fileID: 1497470362710836371}
   - component: {fileID: 6851452354413280693}
   - component: {fileID: 2539276479076115834}
-  - component: {fileID: 3212181564680314684}
-  m_Layer: 11
+  - component: {fileID: 1343430663037914561}
+  m_Layer: 0
   m_Name: SheepSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,20 +245,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &3212181564680314684
-CapsuleCollider:
+--- !u!114 &1343430663037914561
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6513957173000835265}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ba9854e59d2b54d997c1ed8c5c982a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySign: {fileID: 6808405164445967788}
+  aliveSign: {fileID: 2452645375437199775}
+  deadSign: {fileID: 3934389913306188856}
 --- !u!1 &6808405164445967788
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +329,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -11
   m_Sprite: {fileID: 21300000, guid: d0a65356216b8e34caaea07377b16413, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

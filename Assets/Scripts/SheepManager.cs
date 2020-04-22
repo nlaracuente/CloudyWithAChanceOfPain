@@ -1,52 +1,83 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
+using System;
+using UnityEngine;
 
 public class SheepManager : Singleton<SheepManager>
 {
     List<Sheep> sheeps;
-    List<Sheep> sheepsToTarget = new List<Sheep>();
+    Queue<Sheep> sheepsToTarget;
+
+    List<Sheep> Sheeps
+    {
+        get
+        {
+            sheeps = sheeps.Where(s => s != null && !s.IsDead).ToList();
+            return sheeps;
+        }
+    }
+
+    /// <summary>
+    /// Count of remaining sheeps
+    /// </summary>
+    public int TotalSheeps 
+    { 
+        get 
+        {
+            return Sheeps.Count;
+        } 
+    }
+
+    int Seed
+    {
+        get
+        {
+            var rand = new System.Random(Guid.NewGuid().GetHashCode());
+            return rand.Next();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        sheeps = FindObjectsOfType<Sheep>().ToList();
-        sheepsToTarget = new List<Sheep>(sheeps);
+        sheeps = new List<Sheep>();
+    }
+
+    void BuildQueue()
+    {
+        sheepsToTarget = new Queue<Sheep>(ArrayUtility.ShuffleArray(Sheeps.ToArray(), Seed));
     }
 
     public void AddSheep(Sheep sheep)
     {
-        if (!sheeps.Contains(sheep))
-            sheeps.Add(sheep);
+        if (Sheeps.Contains(sheep))
+            return;
 
-        if (!sheepsToTarget.Contains(sheep))
-            sheepsToTarget.Add(sheep);
-    }
+        Sheeps.Add(sheep);
+        BuildQueue();        
+    }   
 
-    public void SheepDied(Sheep sheep)
+    public void SheepDied(Sheep sheep, Wolf wolf = null)
     {
-        if (sheeps.Count <= 1)
-            sheep.TriggerGameOverSequence();
-        else
+        Sheeps.Remove(sheep);
+
+        // Clean up
+        BuildQueue();
+
+        if (TotalSheeps > 0)
             sheep.Die();
-
-        if (sheeps.Contains(sheep))
-            sheeps.Remove(sheep);
+        else
+            sheep.TriggerGameOverSequence(wolf);
     }
 
-    public Sheep GetTargetSheep()
+    public Sheep GetSheepToTarget()
     {
-        if (sheepsToTarget.Count < 1)
+        if (TotalSheeps < 1)
             return null;
 
-        var sheep = sheepsToTarget[0];
-        sheepsToTarget.RemoveAt(0);
-        return sheep;
-    }
+        if (sheepsToTarget.Count < 1)
+            BuildQueue();
 
-    public void SheepNoLongerTargerted(Sheep sheep)
-    {
-        if (!sheepsToTarget.Contains(sheep))
-            sheepsToTarget.Add(sheep);
+        return sheepsToTarget.Dequeue();
     }
 }

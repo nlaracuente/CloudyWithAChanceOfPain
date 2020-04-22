@@ -17,7 +17,8 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] float chasingSpeed = 8f;
     [SerializeField] float distanceToSheep = 1f;
-    [SerializeField] float attackDuration = 3f;
+    [SerializeField] float attackDuration = 1f;
+    [SerializeField] float attackSoundDelay = .25f;
     [SerializeField] float deathDuration = 2f;
     [SerializeField] float coolDownDuration = 2f;
     [SerializeField] Animator animController;
@@ -92,7 +93,7 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
     IEnumerator FindTargetRoutine()
     {
         if (LevelController.Instance.IsGameOver)
-            ChangeRoutine(IdleRoutine()); 
+            ChangeRoutine(GameOverRoutine()); 
         else
         {
             state = State.Idling;
@@ -103,23 +104,14 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
             while (targetSheep == null)
             {
                 yield return new WaitForEndOfFrame();
-                targetSheep = SheepManager.Instance.GetTargetSheep();
+                targetSheep = SheepManager.Instance.GetSheepToTarget();
 
-                // Not game over yet but cannot find a sheep that's alive
-                // Wait a bit
-                if (targetSheep != null && targetSheep.IsDead)
-                {
+                if (LevelController.Instance.IsGameOver)
+                    ChangeRoutine(GameOverRoutine());
+                else if (targetSheep != null && targetSheep.IsDead)
                     ChangeRoutine(AttackCoolDownRoutine());
-                }
                 else if (targetSheep != null)
-                {
                     ChangeRoutine(ChaseRoutine());
-                }
-                else if (LevelController.Instance.IsGameOver)
-                {
-                    ChangeRoutine(IdleRoutine());
-                    break;
-                }
             }
         }
     }
@@ -138,8 +130,10 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
             navMeshAgent.SetDestination(targetSheep.transform.position);
             yield return new WaitForEndOfFrame();
         }
-        
-        if (targetSheep == null || targetSheep.IsDead)
+
+        if (LevelController.Instance.IsGameOver)
+            ChangeRoutine(GameOverRoutine());
+        else if(targetSheep == null || targetSheep.IsDead)
             ChangeRoutine(FindTargetRoutine());
         else
             ChangeRoutine(AttackRoutine());
@@ -148,9 +142,7 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
     IEnumerator AttackRoutine()
     {
         if (targetSheep.IsDead)
-        {
             ChangeRoutine(FindTargetRoutine());
-        } 
         else if (!LevelController.Instance.IsGameOver)
         {
             state = State.Attacking;
@@ -159,31 +151,23 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
             navMeshAgent.velocity = Vector3.zero;
 
             transform.LookAt(targetSheep.transform);
-            mouthTrigger.EnableTrigger = true;
 
+            yield return new WaitForSeconds(attackSoundDelay);
             AudioManager.Instance.PlayRandom2DClip(attacksClipInfo);
-            yield return new WaitForSeconds(attackDuration);            
-            var sheep = mouthTrigger.SheepInTrigger;
+            yield return new WaitForSeconds(attackDuration);
 
-            mouthTrigger.EnableTrigger = false;
-            if (sheep != null && !sheep.IsDead)
-                SheepManager.Instance.SheepDied(sheep);
+            if (LevelController.Instance.IsGameOver)
+                ChangeRoutine(GameOverRoutine());
+            else 
+            {
+                var sheep = mouthTrigger.SheepInTrigger;
+                if (sheep != null && !sheep.IsDead)
+                    SheepManager.Instance.SheepDied(sheep, this);
 
-            ChangeRoutine(AttackCoolDownRoutine());
+                ChangeRoutine(AttackCoolDownRoutine());
+            }            
         }
-    }
-
-    IEnumerator IdleRoutine()
-    {
-        state = State.Idling;
-        animController.SetBool("Idling", true);
-        animController.SetBool("Running", false);
-
-        AudioManager.Instance.PlayRandom2DClip(laughsClipInfo);
-        navMeshAgent.isStopped = true;
-        navMeshAgent.velocity = Vector3.zero;
-        yield return null;
-    }
+    }    
 
     IEnumerator AttackCoolDownRoutine()
     {
@@ -195,6 +179,17 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
         SheepManager.Instance.AddSheep(targetSheep);
         yield return new WaitForSeconds(coolDownDuration);
         ChangeRoutine(FindTargetRoutine());
+    }
+
+    IEnumerator GameOverRoutine()
+    {
+        state = State.Idling;
+        animController.SetBool("Idling", true);
+        animController.SetBool("Running", false);
+
+        navMeshAgent.isStopped = true;
+        navMeshAgent.velocity = Vector3.zero;
+        yield return null;
     }
 
     IEnumerator DeathRoutine()
@@ -235,9 +230,16 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
 
     public void SetNewTarget(Sheep sheep)
     {
+        if (sheep == targetSheep || sheep.IsDead || LevelController.Instance.IsGameOver)
+            return;
+
+        if (sheep == null || targetSheep == null)
+            return;
+
         var curDis = Vector3.Distance(targetSheep.transform.position, transform.position);
         var newDis = Vector3.Distance(sheep.transform.position, transform.position);
-        if (!sheep.IsDead && sheep != targetSheep && newDis < curDis)
+
+        if (newDis < curDis)
         {
             SheepManager.Instance.AddSheep(targetSheep);
             targetSheep = sheep;

@@ -20,10 +20,13 @@ public class ResourceManager : Singleton<ResourceManager>
 
         // Avoid getting the same current one
         BaseResource resource = curResource;
-        while (resource == curResource)
+
+        var tries = 0;
+        while (resource == curResource && tries < resources.Count)
         {
             var i = Random.Range(0, resources.Count);
             resource = resources[i];
+            tries++;
         }
 
         return resource;

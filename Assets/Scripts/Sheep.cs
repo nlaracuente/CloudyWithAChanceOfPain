@@ -224,7 +224,7 @@ public class Sheep : MonoBehaviour, IAttackable, IDousable, IPuddleInteractible,
         curResource?.SetAccessPoint(curResourceAccessPoint);
 
         var go = Cloud.Instance.GetGrassUnderMouse();
-        go.GetComponent<IDousable>()?.RainedOn();
+        go?.GetComponent<IDousable>()?.RainedOn();
 
         if (state != State.Burning)
             SwitchCoroutine(IdlingRoutine());

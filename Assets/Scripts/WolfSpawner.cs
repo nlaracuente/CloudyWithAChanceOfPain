@@ -56,7 +56,7 @@ class WolfSpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeFirstWolfSpawns);
 
         var waveNumber = 1;
-        while (waveNumber <= totalWaves && !LevelController.Instance.IsGameOver)
+        while (waveNumber < totalWaves && !LevelController.Instance.IsGameOver)
         {
             // Wave prep
             var totalWolves = waveNumber++ * totalWolvesPerWaves;// Mathf.FloorToInt((waveNumber * totalWolvesPerWaves) * totalWolvesPerWavesMultiplier);
@@ -69,21 +69,12 @@ class WolfSpawner : MonoBehaviour
             while(spawned < totalWolves)
             {
                 var point = randPoints[spawned++];
-                var wolf = Instantiate(wolvePrefab, point.position, point.rotation, transform).GetComponent<Wolf>();
-
-                //// Wait until it can move before we spawn the next
-                //// Meaning, we cannot spawn another wolf until this one has a target
-                //Sheep sheep = SheepManager.Instance.GetTargetSheep();
-                //while (sheep == null)
-                //{
-                //    yield return new WaitForEndOfFrame();
-                //}
-
-                //wolf.SetInitialTarget(sheep);
+                Instantiate(wolvePrefab, point.position, point.rotation, transform).GetComponent<Wolf>();
                 yield return new WaitForSeconds(timeBeforeSpawningNextWolf);
             }
 
-            yield return new WaitForSeconds(timeBetweenEachWaves);
+            if(waveNumber < totalWaves)
+                yield return new WaitForSeconds(timeBetweenEachWaves);
         }
 
         if (!LevelController.Instance.IsGameOver)

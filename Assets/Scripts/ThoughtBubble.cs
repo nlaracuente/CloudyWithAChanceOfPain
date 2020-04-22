@@ -61,9 +61,9 @@ public class ThoughtBubble : MonoBehaviour
         if (!showStrikes)
             return;
 
-        strikeOne?.gameObject.SetActive(sheep.Strikes > 0);
-        strikeTwo?.gameObject.SetActive(sheep.Strikes > 1);
-        strikeThree?.gameObject.SetActive(sheep.Strikes > 2);
+        //strikeOne?.gameObject.SetActive(sheep.Strikes > 0);
+        //strikeTwo?.gameObject.SetActive(sheep.Strikes > 1);
+        //strikeThree?.gameObject.SetActive(sheep.Strikes > 2);
     }
 
     public void SetThought(Thought thought)

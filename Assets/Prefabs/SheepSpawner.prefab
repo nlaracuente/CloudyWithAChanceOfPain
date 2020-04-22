@@ -47,8 +47,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 1003672363672097189}
   sheepPrefab: {fileID: 9016139639127160316, guid: 96d705f266ae29a47a776296303ffd26,
     type: 3}
-  timeBetweenEachSheepSpawning: 30
-  totalSheepsToSpawn: 10
+  timeTillFirstSpawn: 2
+  timeBetweenEachSheepSpawning: 15
+  totalSheepsToSpawn: 8
 --- !u!1 &1003672363672097190
 GameObject:
   m_ObjectHideFlags: 0
