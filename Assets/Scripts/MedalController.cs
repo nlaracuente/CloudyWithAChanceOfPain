@@ -11,7 +11,7 @@ public class MedalController : MonoBehaviour
     void Start()
     {
         var total = GameManager.Instance.TotalSheeps;
-        totalText.text = total < 7 ? $"0{total}" : $"{total}";
+        totalText.text = total.ToString();
 
         bronzeMedal.SetActive(total < 4);
         silverMedal.SetActive(total > 3 && total < 8);

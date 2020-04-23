@@ -64,6 +64,29 @@ public class Cloud : Singleton<Cloud>
 
     AudioSource rainAudioSource;
 
+    bool LightningRequest { get { return Input.GetMouseButtonDown(leftClick) && !AlternateLeftClick; } }
+    bool RainRequest 
+    { 
+        get 
+        { 
+            return Input.GetMouseButton(rightClick) || AlternateLeftClick; 
+        } 
+    }
+    bool AlternateLeftClick
+    {
+        get
+        {
+            return Input.GetMouseButton(leftClick)
+                   && (Input.GetKey(KeyCode.LeftShift) ||
+                       Input.GetKey(KeyCode.RightShift) ||
+                       Input.GetKey(KeyCode.LeftControl) ||
+                       Input.GetKey(KeyCode.RightControl) ||
+                       Input.GetKey(KeyCode.LeftCommand) ||
+                       Input.GetKey(KeyCode.RightCommand)
+                       );
+        }
+    }
+
     /// <summary>
     /// Mouse current position in world space
     /// </summary>
@@ -94,24 +117,10 @@ public class Cloud : Singleton<Cloud>
 
         FollowMouse();        
 
-        if (Input.GetMouseButtonDown(leftClick))
-        {
-            if (GetClickableObjectUnderMouse() == null)
-                return;
-
-            ChangeState(State.Lightning);            
-            PlayEffect(Effect.Lightining);
-            TriggerEffect(Effect.Lightining);
-        }
-        else if (Input.GetMouseButton(rightClick))
-        {
-            if (GetClickableObjectUnderMouse() == null)
-                return;
-
-            ChangeState(State.Raining);
-            PlayEffect(Effect.Rain);
-            TriggerEffect(Effect.Rain);
-        }
+        if (LightningRequest && GetClickableObjectUnderMouse() != null)
+            ChangeStateAndTriggerEffect(State.Lightning, Effect.Lightining);
+        else if (RainRequest && GetClickableObjectUnderMouse() != null)
+            ChangeStateAndTriggerEffect(State.Raining, Effect.Rain);
         else if (lightningMaxTime < Time.time && state != State.Idle && state != State.Looking)
         {
             // Enough time has passed for the ligthning effect
@@ -124,6 +133,13 @@ public class Cloud : Singleton<Cloud>
             lightningEffect.Stop();
             rainEffect.Stop();
         }
+    }
+
+    void ChangeStateAndTriggerEffect(State _state, Effect _effect)
+    {
+        ChangeState(_state);
+        PlayEffect(_effect);
+        TriggerEffect(_effect);
     }
 
     void ChangeState(State newState)

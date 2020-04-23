@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isPersistent: 1
-  m_musicEnabled: 1
+  m_musicEnabled: 0
   m_soundFxsEnabled: 1
-  m_musicVolume: 0.3
+  m_musicVolume: 0.2
   m_soundFxsVolume: 1
-  m_musicClip: {fileID: 8300000, guid: 8f894466d362bc5458ea64de33842b41, type: 3}
+  m_musicClip: {fileID: 8300000, guid: 1092d3e2ea48d4545aa85115478af33f, type: 3}
   m_soundFxSampleClip: {fileID: 8300000, guid: 07b5b2a44d1f03d4ca2f1ae2199b72de, type: 3}

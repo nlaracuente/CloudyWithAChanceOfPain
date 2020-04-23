@@ -27,6 +27,7 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
 
     // Particle Effects
     [SerializeField] ParticleSystem fireParticleSystem;
+    [SerializeField] ParticleSystem smokeParticleSystem;
 
     // Sounds Clips
     [SerializeField] List<AudioClipInfo> howlingsClipInfos;
@@ -55,6 +56,7 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
         state = State.Idling;
         animController.SetBool("Idling", true);
         fireParticleSystem?.Stop();
+        smokeParticleSystem?.Stop();
         ChangeRoutine(FindTargetRoutine());
         AudioManager.Instance.PlayRandom2DClip(howlingsClipInfos);
     }
@@ -98,7 +100,7 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
         {
             state = State.Idling;
             animController.SetBool("Idling", true);
-            fireParticleSystem?.Stop();
+            smokeParticleSystem?.Stop();
 
             targetSheep = null;
             while (targetSheep == null)
@@ -195,7 +197,7 @@ public class Wolf : MonoBehaviour, IAttackable, IBurnable, IShockable
     IEnumerator DeathRoutine()
     {
         SheepManager.Instance.AddSheep(targetSheep);
-        fireParticleSystem?.Play();
+        smokeParticleSystem?.Play();
 
         state = State.Diying;
         animController.SetTrigger("Death");
