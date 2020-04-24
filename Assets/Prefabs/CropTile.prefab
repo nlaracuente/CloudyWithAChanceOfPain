@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 893866266683493584}
   - component: {fileID: 9061369808895235242}
   - component: {fileID: 5532020174849622798}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &893866266683493584
 Transform:
@@ -88,12 +88,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5135095125566659337}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: FoodBurned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5135095125566659337
 Transform:
@@ -132,12 +132,12 @@ GameObject:
   - component: {fileID: 9156172334795015090}
   - component: {fileID: 8699205814094794442}
   - component: {fileID: 889323788827290541}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9156172334795015090
 Transform:
@@ -209,12 +209,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2386216554763776001}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2386216554763776001
 Transform:
@@ -249,12 +249,12 @@ GameObject:
   - component: {fileID: 2005642994147667243}
   - component: {fileID: 5159253769837245276}
   - component: {fileID: 3573178351977110699}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2005642994147667243
 Transform:
@@ -328,12 +328,12 @@ GameObject:
   - component: {fileID: 4166133242208519340}
   - component: {fileID: 5859870383322435255}
   - component: {fileID: 2487263695859877311}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4166133242208519340
 Transform:
@@ -407,12 +407,12 @@ GameObject:
   - component: {fileID: 3947230989360022435}
   - component: {fileID: 6939708903380741169}
   - component: {fileID: 3699716374942969699}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3947230989360022435
 Transform:
@@ -486,12 +486,12 @@ GameObject:
   - component: {fileID: 6182849404886452047}
   - component: {fileID: 3441506089074235372}
   - component: {fileID: 7011035403225765012}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6182849404886452047
 Transform:
@@ -563,12 +563,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7221230665849680379}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SoilWatered
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7221230665849680379
 Transform:
@@ -602,12 +602,12 @@ GameObject:
   - component: {fileID: 1262384156809151106}
   - component: {fileID: 4342526729247181252}
   - component: {fileID: 4811293012898569097}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1262384156809151106
 Transform:
@@ -681,12 +681,12 @@ GameObject:
   - component: {fileID: 7411745644337832818}
   - component: {fileID: 434411251679884361}
   - component: {fileID: 7987047195415890432}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7411745644337832818
 Transform:
@@ -760,12 +760,12 @@ GameObject:
   - component: {fileID: 4271800889019036859}
   - component: {fileID: 2713480221053624217}
   - component: {fileID: 1198507864278155918}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4271800889019036859
 Transform:
@@ -839,12 +839,12 @@ GameObject:
   - component: {fileID: 204155346108762101}
   - component: {fileID: 5125675006731761552}
   - component: {fileID: 5968503162808395585}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &204155346108762101
 Transform:
@@ -918,12 +918,12 @@ GameObject:
   - component: {fileID: 5446007110389340584}
   - component: {fileID: 2359755914276440317}
   - component: {fileID: 628462125810727199}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5446007110389340584
 Transform:
@@ -997,12 +997,12 @@ GameObject:
   - component: {fileID: 8724156226721558798}
   - component: {fileID: 7833323768925109963}
   - component: {fileID: 8930996224306336654}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8724156226721558798
 Transform:
@@ -1076,12 +1076,12 @@ GameObject:
   - component: {fileID: 7677127331768397667}
   - component: {fileID: 4150310419826077685}
   - component: {fileID: 6266142947677025797}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7677127331768397667
 Transform:
@@ -1155,12 +1155,12 @@ GameObject:
   - component: {fileID: 7740771929328309374}
   - component: {fileID: 147867724209911345}
   - component: {fileID: 7628148996150838905}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7740771929328309374
 Transform:
@@ -1234,12 +1234,12 @@ GameObject:
   - component: {fileID: 2441156382897156772}
   - component: {fileID: 3920196665326545240}
   - component: {fileID: 8279700512266988885}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2441156382897156772
 Transform:
@@ -1313,12 +1313,12 @@ GameObject:
   - component: {fileID: 4720962375818437930}
   - component: {fileID: 1853223081532143565}
   - component: {fileID: 608380240770617226}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4720962375818437930
 Transform:
@@ -1392,12 +1392,12 @@ GameObject:
   - component: {fileID: 5000482047792530351}
   - component: {fileID: 6810206139535215378}
   - component: {fileID: 980415371171619250}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5000482047792530351
 Transform:
@@ -1471,12 +1471,12 @@ GameObject:
   - component: {fileID: 3356321036406503795}
   - component: {fileID: 2550999971021992210}
   - component: {fileID: 4086830212981196200}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3356321036406503795
 Transform:
@@ -1550,12 +1550,12 @@ GameObject:
   - component: {fileID: 5315377129698207541}
   - component: {fileID: 2737842440177875213}
   - component: {fileID: 8682103153703963364}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5315377129698207541
 Transform:
@@ -1629,12 +1629,12 @@ GameObject:
   - component: {fileID: 295707230848946449}
   - component: {fileID: 2373482840090400043}
   - component: {fileID: 925935376895426882}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &295707230848946449
 Transform:
@@ -1708,12 +1708,12 @@ GameObject:
   - component: {fileID: 6331116035002895861}
   - component: {fileID: 6613093740924782107}
   - component: {fileID: 892824263526091187}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6331116035002895861
 Transform:
@@ -1787,12 +1787,12 @@ GameObject:
   - component: {fileID: 5361621458060308016}
   - component: {fileID: 3392981995933563821}
   - component: {fileID: 934592894931993224}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5361621458060308016
 Transform:
@@ -1866,12 +1866,12 @@ GameObject:
   - component: {fileID: 9032430654126216517}
   - component: {fileID: 11117209232078459}
   - component: {fileID: 5430388971003664684}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9032430654126216517
 Transform:
@@ -1945,12 +1945,12 @@ GameObject:
   - component: {fileID: 5268354825646081855}
   - component: {fileID: 1593096267027746000}
   - component: {fileID: 8008704876295331843}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5268354825646081855
 Transform:
@@ -2024,12 +2024,12 @@ GameObject:
   - component: {fileID: 4406146070325476824}
   - component: {fileID: 2251316666152465071}
   - component: {fileID: 7020517797896869685}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4406146070325476824
 Transform:
@@ -2103,12 +2103,12 @@ GameObject:
   - component: {fileID: 25465421781043753}
   - component: {fileID: 366666045242810689}
   - component: {fileID: 155828281372270417}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &25465421781043753
 Transform:
@@ -2182,12 +2182,12 @@ GameObject:
   - component: {fileID: 4363057865503183688}
   - component: {fileID: 3558037642851017734}
   - component: {fileID: 6800367663102315020}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4363057865503183688
 Transform:
@@ -2259,12 +2259,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4575743036666253275}
-  m_Layer: 11
+  - component: {fileID: 7042199366581127464}
+  m_Layer: 0
   m_Name: Soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4575743036666253275
 Transform:
@@ -2286,6 +2287,25 @@ Transform:
   m_Father: {fileID: 4005912172259191862}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7042199366581127464
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710925391282383721}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e61c6e3854e67f47bbbdc83951683e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1736777765754174831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,12 +2317,12 @@ GameObject:
   - component: {fileID: 4206533085083514491}
   - component: {fileID: 771711419565364942}
   - component: {fileID: 3912511768346134373}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4206533085083514491
 Transform:
@@ -2376,12 +2396,12 @@ GameObject:
   - component: {fileID: 7628665527867787895}
   - component: {fileID: 9149384874647100321}
   - component: {fileID: 8961882794692439397}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7628665527867787895
 Transform:
@@ -2453,8 +2473,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821102944609753774}
-  - component: {fileID: 4576706683026127926}
-  m_Layer: 11
+  - component: {fileID: 3530647205654947018}
+  m_Layer: 0
   m_Name: seeds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2480,7 +2500,7 @@ Transform:
   m_Father: {fileID: 4942021197063862263}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &4576706683026127926
+--- !u!111 &3530647205654947018
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2489,9 +2509,9 @@ Animation:
   m_GameObject: {fileID: 1786468703149191476}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d05c8863205e4c34c91ca64463497e34, type: 2}
+  m_Animation: {fileID: 7400000, guid: 700a5e44410cdb04d8c5894716627bd2, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: d05c8863205e4c34c91ca64463497e34, type: 2}
+  - {fileID: 7400000, guid: 700a5e44410cdb04d8c5894716627bd2, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2507,12 +2527,12 @@ GameObject:
   - component: {fileID: 5956592557389430404}
   - component: {fileID: 199724253029377066}
   - component: {fileID: 6951976484458985938}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5956592557389430404
 Transform:
@@ -2584,12 +2604,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7600363530462617756}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7600363530462617756
 Transform:
@@ -2624,12 +2644,12 @@ GameObject:
   - component: {fileID: 5018248611110936720}
   - component: {fileID: 3879160546952054189}
   - component: {fileID: 2107504324311414483}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5018248611110936720
 Transform:
@@ -2703,12 +2723,12 @@ GameObject:
   - component: {fileID: 518443980433984173}
   - component: {fileID: 2713041689544812529}
   - component: {fileID: 6813197135386566572}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &518443980433984173
 Transform:
@@ -2780,12 +2800,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8316768162365130851}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8316768162365130851
 Transform:
@@ -2818,12 +2838,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1391562880655174513}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SoilBurning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1391562880655174513
 Transform:
@@ -2856,7 +2876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3901118814418007449}
   - component: {fileID: 1590967187281825392}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2909,12 +2929,12 @@ GameObject:
   - component: {fileID: 4925243650170054564}
   - component: {fileID: 7889393184664958985}
   - component: {fileID: 3665311969707627369}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4925243650170054564
 Transform:
@@ -2988,12 +3008,12 @@ GameObject:
   - component: {fileID: 1948867762236143389}
   - component: {fileID: 6529505189058189891}
   - component: {fileID: 3281953442848796343}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1948867762236143389
 Transform:
@@ -3067,12 +3087,12 @@ GameObject:
   - component: {fileID: 7178972176660385325}
   - component: {fileID: 2677495037859546319}
   - component: {fileID: 7931359140818043604}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7178972176660385325
 Transform:
@@ -3146,12 +3166,12 @@ GameObject:
   - component: {fileID: 9097081059502100617}
   - component: {fileID: 3696443973798070722}
   - component: {fileID: 2521410427011145570}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9097081059502100617
 Transform:
@@ -3225,12 +3245,12 @@ GameObject:
   - component: {fileID: 8843605738704669381}
   - component: {fileID: 5924047153057436023}
   - component: {fileID: 168206033696582610}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8843605738704669381
 Transform:
@@ -3304,12 +3324,12 @@ GameObject:
   - component: {fileID: 5621792230072160562}
   - component: {fileID: 476245406789356018}
   - component: {fileID: 8325125570663796699}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5621792230072160562
 Transform:
@@ -3383,12 +3403,12 @@ GameObject:
   - component: {fileID: 7260772334955566371}
   - component: {fileID: 8823656449584348834}
   - component: {fileID: 8519916430142995123}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7260772334955566371
 Transform:
@@ -3460,12 +3480,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5675365760826619032}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5675365760826619032
 Transform:
@@ -3500,12 +3520,12 @@ GameObject:
   - component: {fileID: 9058071952915705448}
   - component: {fileID: 767585267037745489}
   - component: {fileID: 1158791891120143377}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9058071952915705448
 Transform:
@@ -3577,12 +3597,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6574642248551097226}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6574642248551097226
 Transform:
@@ -3617,12 +3637,12 @@ GameObject:
   - component: {fileID: 6165569554579956803}
   - component: {fileID: 6611929978784048359}
   - component: {fileID: 1218877006394191311}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6165569554579956803
 Transform:
@@ -3696,12 +3716,12 @@ GameObject:
   - component: {fileID: 4578654053742174334}
   - component: {fileID: 6345055185852576876}
   - component: {fileID: 1923874443004796196}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4578654053742174334
 Transform:
@@ -3775,12 +3795,12 @@ GameObject:
   - component: {fileID: 7732316522821666075}
   - component: {fileID: 459272564891643880}
   - component: {fileID: 8864753515355832252}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7732316522821666075
 Transform:
@@ -3854,12 +3874,12 @@ GameObject:
   - component: {fileID: 2712807960896570736}
   - component: {fileID: 8091033742870269934}
   - component: {fileID: 2807466991849508337}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2712807960896570736
 Transform:
@@ -3933,12 +3953,12 @@ GameObject:
   - component: {fileID: 1924696156700088827}
   - component: {fileID: 6666847381441596840}
   - component: {fileID: 4879102377934364815}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1924696156700088827
 Transform:
@@ -4012,12 +4032,12 @@ GameObject:
   - component: {fileID: 708944977552262577}
   - component: {fileID: 3080392649604312686}
   - component: {fileID: 7846443611583613828}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &708944977552262577
 Transform:
@@ -4091,12 +4111,12 @@ GameObject:
   - component: {fileID: 5989062216235606078}
   - component: {fileID: 5174116080707747540}
   - component: {fileID: 5872535677276390420}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5989062216235606078
 Transform:
@@ -4170,12 +4190,12 @@ GameObject:
   - component: {fileID: 3600690155048501786}
   - component: {fileID: 5207474218902195156}
   - component: {fileID: 4820955892247157443}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3600690155048501786
 Transform:
@@ -4249,12 +4269,12 @@ GameObject:
   - component: {fileID: 2430117390630137712}
   - component: {fileID: 4231636748316612855}
   - component: {fileID: 4370055750127083462}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2430117390630137712
 Transform:
@@ -4328,12 +4348,12 @@ GameObject:
   - component: {fileID: 4721281929333979322}
   - component: {fileID: 2610543785464513588}
   - component: {fileID: 3476305953409468045}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4721281929333979322
 Transform:
@@ -4407,12 +4427,12 @@ GameObject:
   - component: {fileID: 1526762532487905641}
   - component: {fileID: 935403459764795104}
   - component: {fileID: 604881270971935267}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1526762532487905641
 Transform:
@@ -4486,12 +4506,12 @@ GameObject:
   - component: {fileID: 5388664242539726615}
   - component: {fileID: 1128514775514709764}
   - component: {fileID: 511276873070183120}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5388664242539726615
 Transform:
@@ -4565,12 +4585,12 @@ GameObject:
   - component: {fileID: 5846840528368972161}
   - component: {fileID: 5512609861457518947}
   - component: {fileID: 3538211693303839058}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5846840528368972161
 Transform:
@@ -4644,12 +4664,12 @@ GameObject:
   - component: {fileID: 6382291020259809278}
   - component: {fileID: 2792704273306933740}
   - component: {fileID: 3921325843245008768}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6382291020259809278
 Transform:
@@ -4723,12 +4743,12 @@ GameObject:
   - component: {fileID: 3326028183403766391}
   - component: {fileID: 1481576724885858741}
   - component: {fileID: 1721460840794290322}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3326028183403766391
 Transform:
@@ -4802,12 +4822,12 @@ GameObject:
   - component: {fileID: 5812451246182279792}
   - component: {fileID: 9166726720983997449}
   - component: {fileID: 4192697487441257017}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5812451246182279792
 Transform:
@@ -4881,12 +4901,12 @@ GameObject:
   - component: {fileID: 379688152000882443}
   - component: {fileID: 6196036895472772755}
   - component: {fileID: 6582648539760013351}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &379688152000882443
 Transform:
@@ -4958,7 +4978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423556591414340773}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: South
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -4990,7 +5010,7 @@ GameObject:
   - component: {fileID: 7457855272061406410}
   - component: {fileID: 1420966831168248894}
   - component: {fileID: 3225870687923127223}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: BurnableCrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5048,12 +5068,12 @@ GameObject:
   - component: {fileID: 1055376271346644582}
   - component: {fileID: 5968321423653471362}
   - component: {fileID: 4585043298041730050}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1055376271346644582
 Transform:
@@ -5127,12 +5147,12 @@ GameObject:
   - component: {fileID: 5471794751695272441}
   - component: {fileID: 3133084115981782876}
   - component: {fileID: 7933223824008183362}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5471794751695272441
 Transform:
@@ -5206,12 +5226,12 @@ GameObject:
   - component: {fileID: 980106016621709098}
   - component: {fileID: 3336368521121422813}
   - component: {fileID: 6931832136267896610}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &980106016621709098
 Transform:
@@ -5285,12 +5305,12 @@ GameObject:
   - component: {fileID: 5664349572320939337}
   - component: {fileID: 1061065710295883486}
   - component: {fileID: 6484300197182733279}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5664349572320939337
 Transform:
@@ -5364,12 +5384,12 @@ GameObject:
   - component: {fileID: 9206644674858713440}
   - component: {fileID: 8199716902194848947}
   - component: {fileID: 4980010346472259012}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9206644674858713440
 Transform:
@@ -5443,12 +5463,12 @@ GameObject:
   - component: {fileID: 6070067677191349918}
   - component: {fileID: 3386569954871875262}
   - component: {fileID: 7103730397295409458}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6070067677191349918
 Transform:
@@ -5522,12 +5542,12 @@ GameObject:
   - component: {fileID: 1440443876595041321}
   - component: {fileID: 3141195217722342148}
   - component: {fileID: 1917133444487097603}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1440443876595041321
 Transform:
@@ -5601,12 +5621,12 @@ GameObject:
   - component: {fileID: 8474332344427905294}
   - component: {fileID: 6035968117678377577}
   - component: {fileID: 5437849290223109519}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8474332344427905294
 Transform:
@@ -5680,12 +5700,12 @@ GameObject:
   - component: {fileID: 1704745436372623909}
   - component: {fileID: 6875186095371604522}
   - component: {fileID: 535883555316165059}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1704745436372623909
 Transform:
@@ -5759,12 +5779,12 @@ GameObject:
   - component: {fileID: 5150886403674098013}
   - component: {fileID: 2433149184429470463}
   - component: {fileID: 3200967842129744699}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5150886403674098013
 Transform:
@@ -5838,12 +5858,12 @@ GameObject:
   - component: {fileID: 7915949335597749739}
   - component: {fileID: 1942937759701180414}
   - component: {fileID: 2202057601473310159}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7915949335597749739
 Transform:
@@ -5917,12 +5937,12 @@ GameObject:
   - component: {fileID: 4072437263352006264}
   - component: {fileID: 7647516872103171541}
   - component: {fileID: 3907427810833015453}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4072437263352006264
 Transform:
@@ -5996,12 +6016,12 @@ GameObject:
   - component: {fileID: 4357270592893668182}
   - component: {fileID: 7499761203628656052}
   - component: {fileID: 4006974843700259773}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4357270592893668182
 Transform:
@@ -6075,12 +6095,12 @@ GameObject:
   - component: {fileID: 7285156890212068057}
   - component: {fileID: 588109649349415785}
   - component: {fileID: 522619987081250952}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7285156890212068057
 Transform:
@@ -6154,12 +6174,12 @@ GameObject:
   - component: {fileID: 2894064945413457955}
   - component: {fileID: 5147584751398222825}
   - component: {fileID: 595779947658355983}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2894064945413457955
 Transform:
@@ -6233,12 +6253,12 @@ GameObject:
   - component: {fileID: 5970913674481739156}
   - component: {fileID: 8257672759468145837}
   - component: {fileID: 2197692456099114747}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5970913674481739156
 Transform:
@@ -6312,12 +6332,12 @@ GameObject:
   - component: {fileID: 4228599197319054107}
   - component: {fileID: 8345849197974503536}
   - component: {fileID: 2214315721123309807}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4228599197319054107
 Transform:
@@ -6391,12 +6411,12 @@ GameObject:
   - component: {fileID: 4502260122856053229}
   - component: {fileID: 136035845875943104}
   - component: {fileID: 7626472492731200053}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4502260122856053229
 Transform:
@@ -6470,12 +6490,12 @@ GameObject:
   - component: {fileID: 6164750463470576001}
   - component: {fileID: 8663253553547714787}
   - component: {fileID: 4310391027918582175}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6164750463470576001
 Transform:
@@ -6549,12 +6569,12 @@ GameObject:
   - component: {fileID: 1316493869667619714}
   - component: {fileID: 7439383723640455181}
   - component: {fileID: 8689243492991430904}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1316493869667619714
 Transform:
@@ -6628,12 +6648,12 @@ GameObject:
   - component: {fileID: 5229751853618599060}
   - component: {fileID: 9108736953770034095}
   - component: {fileID: 564683983001803085}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5229751853618599060
 Transform:
@@ -6707,12 +6727,12 @@ GameObject:
   - component: {fileID: 6182993335559886473}
   - component: {fileID: 8237529843744943864}
   - component: {fileID: 418093843756647372}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6182993335559886473
 Transform:
@@ -6786,12 +6806,12 @@ GameObject:
   - component: {fileID: 9207031809297573007}
   - component: {fileID: 3269168198831821894}
   - component: {fileID: 2476795531660858289}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9207031809297573007
 Transform:
@@ -6865,12 +6885,12 @@ GameObject:
   - component: {fileID: 1568711550825275360}
   - component: {fileID: 2526513509173551000}
   - component: {fileID: 3894650498307365824}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1568711550825275360
 Transform:
@@ -6944,12 +6964,12 @@ GameObject:
   - component: {fileID: 6343643887181348159}
   - component: {fileID: 1119561098523398771}
   - component: {fileID: 4357589322772642451}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6343643887181348159
 Transform:
@@ -7023,12 +7043,12 @@ GameObject:
   - component: {fileID: 2932137172138005683}
   - component: {fileID: 6749291706352721146}
   - component: {fileID: 1327701333395036966}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2932137172138005683
 Transform:
@@ -7102,12 +7122,12 @@ GameObject:
   - component: {fileID: 5571634596343716888}
   - component: {fileID: 7822870556299510391}
   - component: {fileID: 501357603461810703}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5571634596343716888
 Transform:
@@ -7181,12 +7201,12 @@ GameObject:
   - component: {fileID: 1651137786077105001}
   - component: {fileID: 6909577518106296914}
   - component: {fileID: 3225721472160273636}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1651137786077105001
 Transform:
@@ -7258,12 +7278,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9177895163216188286}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: FoodWatered
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9177895163216188286
 Transform:
@@ -7297,12 +7317,12 @@ GameObject:
   - component: {fileID: 3515963059712610238}
   - component: {fileID: 8400692251135071706}
   - component: {fileID: 1244165646719052473}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3515963059712610238
 Transform:
@@ -7376,12 +7396,12 @@ GameObject:
   - component: {fileID: 3572342909898983608}
   - component: {fileID: 6418657933731810931}
   - component: {fileID: 4033628504516305487}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3572342909898983608
 Transform:
@@ -7453,12 +7473,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4328962284657117550}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4328962284657117550
 Transform:
@@ -7493,12 +7513,12 @@ GameObject:
   - component: {fileID: 6519222585847516449}
   - component: {fileID: 5050558796032806423}
   - component: {fileID: 6328774600234176809}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6519222585847516449
 Transform:
@@ -7572,12 +7592,12 @@ GameObject:
   - component: {fileID: 1827684688693334453}
   - component: {fileID: 94309566617909706}
   - component: {fileID: 7633502450918155193}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1827684688693334453
 Transform:
@@ -7651,12 +7671,12 @@ GameObject:
   - component: {fileID: 7823412575808947173}
   - component: {fileID: 866958847541596245}
   - component: {fileID: 15516167641682327}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7823412575808947173
 Transform:
@@ -7730,12 +7750,12 @@ GameObject:
   - component: {fileID: 6803692087307047961}
   - component: {fileID: 7095171395802535002}
   - component: {fileID: 7580900118568314653}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6803692087307047961
 Transform:
@@ -7807,7 +7827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6457891216230556900}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: North
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -7839,12 +7859,12 @@ GameObject:
   - component: {fileID: 402361155565354540}
   - component: {fileID: 6792815325402430981}
   - component: {fileID: 4684136638729445734}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &402361155565354540
 Transform:
@@ -7918,12 +7938,12 @@ GameObject:
   - component: {fileID: 2157034575664066382}
   - component: {fileID: 6939576348070474389}
   - component: {fileID: 3018937511734278785}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2157034575664066382
 Transform:
@@ -8128,12 +8148,12 @@ GameObject:
   - component: {fileID: 5205170343158577905}
   - component: {fileID: 2514605553208486197}
   - component: {fileID: 6266265170411277349}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5205170343158577905
 Transform:
@@ -8207,12 +8227,12 @@ GameObject:
   - component: {fileID: 8634073066960011864}
   - component: {fileID: 550855137804812482}
   - component: {fileID: 3397136672285946867}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8634073066960011864
 Transform:
@@ -8286,12 +8306,12 @@ GameObject:
   - component: {fileID: 5178316463092038690}
   - component: {fileID: 8463260206320375812}
   - component: {fileID: 1190518763387758047}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5178316463092038690
 Transform:
@@ -8365,12 +8385,12 @@ GameObject:
   - component: {fileID: 5913987794243430430}
   - component: {fileID: 3917305849335072536}
   - component: {fileID: 998898590372640132}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5913987794243430430
 Transform:
@@ -8444,12 +8464,12 @@ GameObject:
   - component: {fileID: 17206966479400499}
   - component: {fileID: 8495448731047529743}
   - component: {fileID: 4969916901236036749}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &17206966479400499
 Transform:
@@ -8523,12 +8543,12 @@ GameObject:
   - component: {fileID: 5095288743208462436}
   - component: {fileID: 4413259479159722030}
   - component: {fileID: 5971843883080121839}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5095288743208462436
 Transform:
@@ -8602,12 +8622,12 @@ GameObject:
   - component: {fileID: 4749416969945578101}
   - component: {fileID: 2672063455728402003}
   - component: {fileID: 5517141539677932490}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4749416969945578101
 Transform:
@@ -8681,12 +8701,12 @@ GameObject:
   - component: {fileID: 4910467961377622858}
   - component: {fileID: 2408127316679575483}
   - component: {fileID: 5420009637752532987}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4910467961377622858
 Transform:
@@ -8760,12 +8780,12 @@ GameObject:
   - component: {fileID: 4974609350807338925}
   - component: {fileID: 4422039048136832010}
   - component: {fileID: 6375502389151580497}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4974609350807338925
 Transform:
@@ -8839,12 +8859,12 @@ GameObject:
   - component: {fileID: 2464354466984262212}
   - component: {fileID: 6153595517465543711}
   - component: {fileID: 2763762603631606180}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2464354466984262212
 Transform:
@@ -8918,12 +8938,12 @@ GameObject:
   - component: {fileID: 7004525447205980638}
   - component: {fileID: 6190390394598840161}
   - component: {fileID: 4784836674481614193}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7004525447205980638
 Transform:
@@ -8997,12 +9017,12 @@ GameObject:
   - component: {fileID: 6459504842698345369}
   - component: {fileID: 1806186095671413643}
   - component: {fileID: 5282361207264547508}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6459504842698345369
 Transform:
@@ -9076,12 +9096,12 @@ GameObject:
   - component: {fileID: 4822117335279155133}
   - component: {fileID: 1374905826038446836}
   - component: {fileID: 7928028594584021666}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4822117335279155133
 Transform:
@@ -9155,12 +9175,12 @@ GameObject:
   - component: {fileID: 9156274039586113120}
   - component: {fileID: 4880539256673509915}
   - component: {fileID: 8162801417808235179}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9156274039586113120
 Transform:
@@ -9232,12 +9252,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5371894908477527677}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: FoodBurnedWatered
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5371894908477527677
 Transform:
@@ -9276,12 +9296,12 @@ GameObject:
   - component: {fileID: 6865703749357416700}
   - component: {fileID: 3384697523297766913}
   - component: {fileID: 891717393579755166}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6865703749357416700
 Transform:
@@ -9353,12 +9373,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4942021197063862263}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Seeded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4942021197063862263
 Transform:
@@ -9386,12 +9406,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4711317825576978110}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4711317825576978110
 Transform:
@@ -9424,7 +9444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8275344420982521541}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: West
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -9456,12 +9476,12 @@ GameObject:
   - component: {fileID: 3788596722234631867}
   - component: {fileID: 971431463604108450}
   - component: {fileID: 5016643964267229677}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3788596722234631867
 Transform:
@@ -9535,12 +9555,12 @@ GameObject:
   - component: {fileID: 6093012346288519821}
   - component: {fileID: 786594177677357568}
   - component: {fileID: 1091296642399506232}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6093012346288519821
 Transform:
@@ -9614,12 +9634,12 @@ GameObject:
   - component: {fileID: 5359777407915374067}
   - component: {fileID: 4264350009951614340}
   - component: {fileID: 5851854843458329345}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5359777407915374067
 Transform:
@@ -9693,12 +9713,12 @@ GameObject:
   - component: {fileID: 5404727185911951201}
   - component: {fileID: 6198901979321296995}
   - component: {fileID: 773914456865279880}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5404727185911951201
 Transform:
@@ -9770,12 +9790,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3249530205113328760}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SoilBurned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3249530205113328760
 Transform:
@@ -9806,12 +9826,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2077972974843462862}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2077972974843462862
 Transform:
@@ -9844,12 +9864,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3158263203853764822}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: FoodBurning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3158263203853764822
 Transform:
@@ -9884,12 +9904,12 @@ GameObject:
   - component: {fileID: 2483714610603743525}
   - component: {fileID: 3971042906548107115}
   - component: {fileID: 8440487794115014557}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2483714610603743525
 Transform:
@@ -9963,12 +9983,12 @@ GameObject:
   - component: {fileID: 6735727917806293324}
   - component: {fileID: 1377061414462914734}
   - component: {fileID: 8639276165603277991}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6735727917806293324
 Transform:
@@ -10042,12 +10062,12 @@ GameObject:
   - component: {fileID: 9108355016848667583}
   - component: {fileID: 8813646786297755197}
   - component: {fileID: 8407511136968186740}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9108355016848667583
 Transform:
@@ -10121,12 +10141,12 @@ GameObject:
   - component: {fileID: 8717676633036002169}
   - component: {fileID: 526496273141733394}
   - component: {fileID: 807098033026328358}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8717676633036002169
 Transform:
@@ -10200,12 +10220,12 @@ GameObject:
   - component: {fileID: 4722604554108595967}
   - component: {fileID: 6458383110235321056}
   - component: {fileID: 1517723192769524344}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4722604554108595967
 Transform:
@@ -10279,12 +10299,12 @@ GameObject:
   - component: {fileID: 40171374002203721}
   - component: {fileID: 896522074451513751}
   - component: {fileID: 5853607671585503075}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &40171374002203721
 Transform:
@@ -10358,12 +10378,12 @@ GameObject:
   - component: {fileID: 6361338176006061618}
   - component: {fileID: 5224268212030200399}
   - component: {fileID: 8441564636295995319}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6361338176006061618
 Transform:
@@ -10437,12 +10457,12 @@ GameObject:
   - component: {fileID: 7092374870409258883}
   - component: {fileID: 7866052816014977478}
   - component: {fileID: 2307098806274447128}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7092374870409258883
 Transform:
@@ -10516,12 +10536,12 @@ GameObject:
   - component: {fileID: 3832901620493710133}
   - component: {fileID: 4698626418537847058}
   - component: {fileID: 7901270913322561746}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3832901620493710133
 Transform:
@@ -10595,12 +10615,12 @@ GameObject:
   - component: {fileID: 5225360864223276687}
   - component: {fileID: 8264535195864400588}
   - component: {fileID: 5650658746767296165}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5225360864223276687
 Transform:
@@ -10674,12 +10694,12 @@ GameObject:
   - component: {fileID: 6348897188073960524}
   - component: {fileID: 4902803959267398656}
   - component: {fileID: 980830524011721793}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6348897188073960524
 Transform:
@@ -10751,12 +10771,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8075772088134505267}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8075772088134505267
 Transform:
@@ -10791,12 +10811,12 @@ GameObject:
   - component: {fileID: 5117993817120257764}
   - component: {fileID: 1909369010978207720}
   - component: {fileID: 4407721053198283174}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5117993817120257764
 Transform:
@@ -10868,7 +10888,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3074407363150439667}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: East
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -10900,12 +10920,12 @@ GameObject:
   - component: {fileID: 316292386568502279}
   - component: {fileID: 676791090808689259}
   - component: {fileID: 6027684679752912496}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &316292386568502279
 Transform:
@@ -10979,12 +10999,12 @@ GameObject:
   - component: {fileID: 8683624360124528934}
   - component: {fileID: 6928557265731663904}
   - component: {fileID: 3384585288065357075}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8683624360124528934
 Transform:
@@ -11058,12 +11078,12 @@ GameObject:
   - component: {fileID: 742407815743009214}
   - component: {fileID: 9072057209413158102}
   - component: {fileID: 3730031394993468429}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &742407815743009214
 Transform:
@@ -11137,12 +11157,12 @@ GameObject:
   - component: {fileID: 2250402169283651102}
   - component: {fileID: 6954744895658980157}
   - component: {fileID: 5083541444602878875}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2250402169283651102
 Transform:
@@ -11216,12 +11236,12 @@ GameObject:
   - component: {fileID: 1003322925833659176}
   - component: {fileID: 4511254704922442061}
   - component: {fileID: 5410074934771929940}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1003322925833659176
 Transform:
@@ -11295,12 +11315,12 @@ GameObject:
   - component: {fileID: 6842219981170126750}
   - component: {fileID: 2549175214174379984}
   - component: {fileID: 1875611820529748610}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6842219981170126750
 Transform:
@@ -11374,12 +11394,12 @@ GameObject:
   - component: {fileID: 2435770628006710536}
   - component: {fileID: 7820509081192685947}
   - component: {fileID: 6807099741033506861}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2435770628006710536
 Transform:
@@ -11453,12 +11473,12 @@ GameObject:
   - component: {fileID: 2062094649166923847}
   - component: {fileID: 9156632795528909373}
   - component: {fileID: 1189736296759979708}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2062094649166923847
 Transform:
@@ -11530,12 +11550,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5350831982744222134}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5350831982744222134
 Transform:
@@ -11570,12 +11590,12 @@ GameObject:
   - component: {fileID: 5198225100505585228}
   - component: {fileID: 5707514626288494452}
   - component: {fileID: 5530904415062114912}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5198225100505585228
 Transform:
@@ -11649,12 +11669,12 @@ GameObject:
   - component: {fileID: 7491334310109463432}
   - component: {fileID: 3623522571658100217}
   - component: {fileID: 8388343214756963763}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7491334310109463432
 Transform:
@@ -11728,12 +11748,12 @@ GameObject:
   - component: {fileID: 1626030732134021289}
   - component: {fileID: 8900211435643923247}
   - component: {fileID: 2881905660642050955}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Water (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1626030732134021289
 Transform:
@@ -11805,12 +11825,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4153295356196166267}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4153295356196166267
 Transform:
@@ -11845,12 +11865,12 @@ GameObject:
   - component: {fileID: 673761164711170438}
   - component: {fileID: 2091636325995068143}
   - component: {fileID: 6255806216403661286}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &673761164711170438
 Transform:
@@ -11924,12 +11944,12 @@ GameObject:
   - component: {fileID: 5421333180257608627}
   - component: {fileID: 3990284268628923626}
   - component: {fileID: 607540855853778741}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5421333180257608627
 Transform:
@@ -12001,12 +12021,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9216855651944840237}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9216855651944840237
 Transform:
@@ -12041,12 +12061,12 @@ GameObject:
   - component: {fileID: 846916512777801941}
   - component: {fileID: 3606186766891956700}
   - component: {fileID: 2256956504191165692}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &846916512777801941
 Transform:
@@ -12118,12 +12138,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4617116991897637426}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4617116991897637426
 Transform:
@@ -12158,12 +12178,12 @@ GameObject:
   - component: {fileID: 4074214936925654678}
   - component: {fileID: 2351715964101416213}
   - component: {fileID: 8115591922936172711}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4074214936925654678
 Transform:
@@ -12237,12 +12257,12 @@ GameObject:
   - component: {fileID: 762417718914184745}
   - component: {fileID: 6844980198664626053}
   - component: {fileID: 6697086551321712565}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &762417718914184745
 Transform:
@@ -12316,12 +12336,12 @@ GameObject:
   - component: {fileID: 4995902192666317541}
   - component: {fileID: 395274632817859649}
   - component: {fileID: 4645466254616121250}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4995902192666317541
 Transform:
@@ -12395,12 +12415,12 @@ GameObject:
   - component: {fileID: 2894989874880176615}
   - component: {fileID: 5961626685829515626}
   - component: {fileID: 4375719395867814194}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2894989874880176615
 Transform:
@@ -12474,12 +12494,12 @@ GameObject:
   - component: {fileID: 7320088473080743930}
   - component: {fileID: 6073836533583058103}
   - component: {fileID: 4948787780684019772}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7320088473080743930
 Transform:
@@ -12553,12 +12573,12 @@ GameObject:
   - component: {fileID: 3990419398586777204}
   - component: {fileID: 503775792568674727}
   - component: {fileID: 4261666507655222802}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3990419398586777204
 Transform:
@@ -12630,7 +12650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7443493693537384978}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: AccessPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12664,12 +12684,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6351464294468596036}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6351464294468596036
 Transform:
@@ -12704,12 +12724,12 @@ GameObject:
   - component: {fileID: 3386100026860096154}
   - component: {fileID: 5313410104171274388}
   - component: {fileID: 5612633745411259547}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3386100026860096154
 Transform:
@@ -12783,12 +12803,12 @@ GameObject:
   - component: {fileID: 2214548064006178429}
   - component: {fileID: 2147742067802788817}
   - component: {fileID: 5749314983178629614}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2214548064006178429
 Transform:
@@ -12862,12 +12882,12 @@ GameObject:
   - component: {fileID: 5192081558578613484}
   - component: {fileID: 5167137155732423264}
   - component: {fileID: 8527603609129814086}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5192081558578613484
 Transform:
@@ -12941,12 +12961,12 @@ GameObject:
   - component: {fileID: 5992330856596631279}
   - component: {fileID: 4406562646660245381}
   - component: {fileID: 5281408038254322160}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5992330856596631279
 Transform:
@@ -13020,12 +13040,12 @@ GameObject:
   - component: {fileID: 2056919257681235983}
   - component: {fileID: 800838440348341528}
   - component: {fileID: 5049540316095754892}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2056919257681235983
 Transform:
@@ -13099,12 +13119,12 @@ GameObject:
   - component: {fileID: 8798713086153744811}
   - component: {fileID: 4017726265669150825}
   - component: {fileID: 6141568551081727035}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8798713086153744811
 Transform:
@@ -13178,12 +13198,12 @@ GameObject:
   - component: {fileID: 6967595477083408814}
   - component: {fileID: 5827020213509522163}
   - component: {fileID: 821715579588483212}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6967595477083408814
 Transform:
@@ -13257,12 +13277,12 @@ GameObject:
   - component: {fileID: 4590354139427593695}
   - component: {fileID: 344857119764206939}
   - component: {fileID: 4022634416161806896}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4590354139427593695
 Transform:
@@ -13336,12 +13356,12 @@ GameObject:
   - component: {fileID: 5964929034531913402}
   - component: {fileID: 2893983157773659202}
   - component: {fileID: 3953357033740994761}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5964929034531913402
 Transform:
@@ -13415,12 +13435,12 @@ GameObject:
   - component: {fileID: 4705770548480769733}
   - component: {fileID: 5114326330100558351}
   - component: {fileID: 8711139556123320394}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4705770548480769733
 Transform:
@@ -13494,12 +13514,12 @@ GameObject:
   - component: {fileID: 7486444749308918654}
   - component: {fileID: 1244690451384959426}
   - component: {fileID: 4376071455868624815}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7486444749308918654
 Transform:
@@ -13573,12 +13593,12 @@ GameObject:
   - component: {fileID: 5705878226602907332}
   - component: {fileID: 9080354677464421450}
   - component: {fileID: 2096518184891177535}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5705878226602907332
 Transform:
@@ -13650,12 +13670,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3819440740863154026}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SeededWatered
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3819440740863154026
 Transform:
@@ -13694,12 +13714,12 @@ GameObject:
   - component: {fileID: 5573195983509040841}
   - component: {fileID: 3387221785430122524}
   - component: {fileID: 8278282541487448175}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5573195983509040841
 Transform:
@@ -13773,12 +13793,12 @@ GameObject:
   - component: {fileID: 6945088904116210645}
   - component: {fileID: 492957906632594899}
   - component: {fileID: 6723029323979932627}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6945088904116210645
 Transform:
@@ -13852,12 +13872,12 @@ GameObject:
   - component: {fileID: 1975890553352994105}
   - component: {fileID: 5381662550620817118}
   - component: {fileID: 6000973756345322738}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1975890553352994105
 Transform:
@@ -13931,12 +13951,12 @@ GameObject:
   - component: {fileID: 4558028851270124724}
   - component: {fileID: 8966673816441160625}
   - component: {fileID: 2939125393193941744}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4558028851270124724
 Transform:
@@ -14010,12 +14030,12 @@ GameObject:
   - component: {fileID: 4046661415790374097}
   - component: {fileID: 3722779818883970357}
   - component: {fileID: 1499427408824926052}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4046661415790374097
 Transform:
@@ -14089,12 +14109,12 @@ GameObject:
   - component: {fileID: 7776014575987659681}
   - component: {fileID: 2616032259178010741}
   - component: {fileID: 2101284193932138184}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7776014575987659681
 Transform:
@@ -14168,12 +14188,12 @@ GameObject:
   - component: {fileID: 5449832860237480689}
   - component: {fileID: 4180593862725205599}
   - component: {fileID: 3395292096334949492}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5449832860237480689
 Transform:
@@ -14247,12 +14267,12 @@ GameObject:
   - component: {fileID: 3913857486619802115}
   - component: {fileID: 3643444060679765124}
   - component: {fileID: 8338354939081690164}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3913857486619802115
 Transform:
@@ -14324,12 +14344,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5660752968621239203}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5660752968621239203
 Transform:
@@ -14359,12 +14379,12 @@ GameObject:
   - component: {fileID: 7500263659629724768}
   - component: {fileID: 6212953623188262286}
   - component: {fileID: 5656726950011717060}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7500263659629724768
 Transform:
@@ -14438,12 +14458,12 @@ GameObject:
   - component: {fileID: 6678982066356026314}
   - component: {fileID: 7351436771748575468}
   - component: {fileID: 49328288367771813}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6678982066356026314
 Transform:
@@ -14517,12 +14537,12 @@ GameObject:
   - component: {fileID: 3538814142299644066}
   - component: {fileID: 9069295834458715880}
   - component: {fileID: 5565473258325365317}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3538814142299644066
 Transform:
@@ -14596,12 +14616,12 @@ GameObject:
   - component: {fileID: 3930477449664540876}
   - component: {fileID: 450075285811345782}
   - component: {fileID: 1474737624915142172}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: soil2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3930477449664540876
 Transform:
@@ -14675,12 +14695,12 @@ GameObject:
   - component: {fileID: 6402518350257717589}
   - component: {fileID: 3567901013977668092}
   - component: {fileID: 1815273305591811502}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6402518350257717589
 Transform:
@@ -14754,12 +14774,12 @@ GameObject:
   - component: {fileID: 710477117432946648}
   - component: {fileID: 8450255624742732600}
   - component: {fileID: 5748244222965057301}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &710477117432946648
 Transform:
@@ -14833,12 +14853,12 @@ GameObject:
   - component: {fileID: 5090822943678523031}
   - component: {fileID: 1308148472227837334}
   - component: {fileID: 4588786729814361355}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5090822943678523031
 Transform:
@@ -14910,12 +14930,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1836332277069798074}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: plant (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1836332277069798074
 Transform:
@@ -14950,12 +14970,12 @@ GameObject:
   - component: {fileID: 3999681957446523821}
   - component: {fileID: 7723090768745373583}
   - component: {fileID: 1539419903984861642}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3999681957446523821
 Transform:
@@ -15029,12 +15049,12 @@ GameObject:
   - component: {fileID: 3323745148719705898}
   - component: {fileID: 1720288794359415553}
   - component: {fileID: 7955871833510656351}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3323745148719705898
 Transform:
@@ -15108,12 +15128,12 @@ GameObject:
   - component: {fileID: 5666023992572010928}
   - component: {fileID: 5642216294107886853}
   - component: {fileID: 2652520012241130541}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5666023992572010928
 Transform:
@@ -15187,12 +15207,12 @@ GameObject:
   - component: {fileID: 8170736914049469339}
   - component: {fileID: 338256007070108508}
   - component: {fileID: 861949611652598700}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8170736914049469339
 Transform:
@@ -15266,12 +15286,12 @@ GameObject:
   - component: {fileID: 6503835060931996849}
   - component: {fileID: 471431571907835151}
   - component: {fileID: 1976616915849907684}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6503835060931996849
 Transform:
@@ -15345,12 +15365,12 @@ GameObject:
   - component: {fileID: 6162456817122147668}
   - component: {fileID: 2415881972174593817}
   - component: {fileID: 7838919171157785316}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6162456817122147668
 Transform:
@@ -15424,12 +15444,12 @@ GameObject:
   - component: {fileID: 5184185402370078345}
   - component: {fileID: 4175324768525993625}
   - component: {fileID: 1815506042030045297}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5184185402370078345
 Transform:
@@ -15503,12 +15523,12 @@ GameObject:
   - component: {fileID: 3643097867692397275}
   - component: {fileID: 7034461639225140912}
   - component: {fileID: 9077766784475917989}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3643097867692397275
 Transform:
@@ -15582,12 +15602,12 @@ GameObject:
   - component: {fileID: 910092795352024063}
   - component: {fileID: 6363672041888944242}
   - component: {fileID: 370158600044870761}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &910092795352024063
 Transform:
@@ -15661,12 +15681,12 @@ GameObject:
   - component: {fileID: 6090012584722466560}
   - component: {fileID: 3364979987398426515}
   - component: {fileID: 3264858910462290895}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6090012584722466560
 Transform:
@@ -15740,12 +15760,12 @@ GameObject:
   - component: {fileID: 7819135106922711708}
   - component: {fileID: 8803888008233826965}
   - component: {fileID: 7512066270702625030}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7819135106922711708
 Transform:
@@ -15819,12 +15839,12 @@ GameObject:
   - component: {fileID: 3511505628102139424}
   - component: {fileID: 7658509612529310387}
   - component: {fileID: 7608348064442640972}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3511505628102139424
 Transform:
@@ -15898,12 +15918,12 @@ GameObject:
   - component: {fileID: 9078517458169036058}
   - component: {fileID: 9096556596373853740}
   - component: {fileID: 5264702534404894489}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9078517458169036058
 Transform:
@@ -15977,12 +15997,12 @@ GameObject:
   - component: {fileID: 5676720098948316310}
   - component: {fileID: 95343539945135922}
   - component: {fileID: 3904344054988605604}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5676720098948316310
 Transform:
@@ -16056,12 +16076,12 @@ GameObject:
   - component: {fileID: 5270720636617154840}
   - component: {fileID: 5341096072834436179}
   - component: {fileID: 1703108403675034076}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Soil (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5270720636617154840
 Transform:
@@ -16135,12 +16155,12 @@ GameObject:
   - component: {fileID: 8049665649095592473}
   - component: {fileID: 6504824085822691734}
   - component: {fileID: 2267296158071082274}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8049665649095592473
 Transform:
@@ -16214,12 +16234,12 @@ GameObject:
   - component: {fileID: 4014584558950136249}
   - component: {fileID: 8833756694924080474}
   - component: {fileID: 3153336290200756758}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4014584558950136249
 Transform:
@@ -16293,12 +16313,12 @@ GameObject:
   - component: {fileID: 5049516266297520056}
   - component: {fileID: 4370814293785534539}
   - component: {fileID: 1001407860125424783}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5049516266297520056
 Transform:
@@ -16372,12 +16392,12 @@ GameObject:
   - component: {fileID: 7662588771508188391}
   - component: {fileID: 802327784718304103}
   - component: {fileID: 6078725171638873462}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7662588771508188391
 Transform:
@@ -16451,12 +16471,12 @@ GameObject:
   - component: {fileID: 1797549371223793607}
   - component: {fileID: 2708639577004358622}
   - component: {fileID: 3097919261326544088}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1797549371223793607
 Transform:
@@ -16530,12 +16550,12 @@ GameObject:
   - component: {fileID: 8820235609494994744}
   - component: {fileID: 2791548316665216403}
   - component: {fileID: 1775693880530087678}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: seed5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8820235609494994744
 Transform:
@@ -16609,12 +16629,12 @@ GameObject:
   - component: {fileID: 4552454608240077388}
   - component: {fileID: 4390576352915795482}
   - component: {fileID: 1239141132111329067}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4552454608240077388
 Transform:
@@ -16688,12 +16708,12 @@ GameObject:
   - component: {fileID: 565312251864546574}
   - component: {fileID: 944710917018150590}
   - component: {fileID: 2626615992530006873}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: sprout (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &565312251864546574
 Transform:
@@ -16898,6 +16918,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4005912172259191862}
     m_Modifications:
+    - target: {fileID: 3433167014320427657, guid: 42df283b698e219498fa352969dce4b5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516146719433685870, guid: 42df283b698e219498fa352969dce4b5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128073183642692283, guid: 42df283b698e219498fa352969dce4b5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4776613489842112321, guid: 42df283b698e219498fa352969dce4b5,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -16947,6 +16982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TargetResourceIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016139639127160316, guid: 42df283b698e219498fa352969dce4b5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9016139639127160319, guid: 42df283b698e219498fa352969dce4b5,
         type: 3}

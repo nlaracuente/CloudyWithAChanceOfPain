@@ -23,7 +23,7 @@ TagManager:
   - Billboard
   - FireSpead
   - LightningSpread
-  - 
+  - Cloud
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Signs
+    uniqueID: 1570290323
+    locked: 0
+  - name: Cloud
+    uniqueID: 1637302531
     locked: 0

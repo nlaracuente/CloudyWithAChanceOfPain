@@ -95,12 +95,14 @@ MonoBehaviour:
   m_isPersistent: 0
   clickableLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   spriteRenderer: {fileID: 4140596054270380612}
   trackingSpeed: 45
   lightningTime: 0.25
-  lightningEffect: {fileID: 0}
-  rainEffect: {fileID: 0}
+  lightningEffect: {fileID: 1503157809545527816, guid: 760f4c9eea5ee8549a3a0d1d9ac49d2b,
+    type: 3}
+  rainEffect: {fileID: 7462012351013133069, guid: 19ce62e30ccd9354ca657aae84cd87ce,
+    type: 3}
   lightningClipInfos:
   - clip: {fileID: 8300000, guid: 9081af6b716dadd43a04034cc6d849b5, type: 3}
     volume: 1

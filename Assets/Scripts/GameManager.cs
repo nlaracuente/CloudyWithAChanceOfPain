@@ -8,6 +8,8 @@ public class GameManager : Singleton<GameManager>
     float faderTime = 0.5f;
     public float FaderTime { get { return faderTime; } }
 
+    public int TotalSheeps { get; private set; } = 0;
+
     public enum SceneId
     {
         MainMenu,
@@ -34,6 +36,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GameCompleted()
     {
+        TotalSheeps = SheepManager.Instance.TotalSheeps;
         StartCoroutine(TransitionToScene(SceneId.GameCompleted));
     }
 
