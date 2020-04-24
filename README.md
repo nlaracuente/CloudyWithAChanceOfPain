@@ -20,4 +20,4 @@ Sheep are dumb. Make sure the dumb sheep stay alive by using your rain and light
 - Photoshop
 - Audacity
 
-[screenshot]https://static.jam.vg/raw/a67/8/z/3314e.pngg "CloudyWithAChanceOfPain"
+[screenshot] https://static.jam.vg/raw/a67/8/z/3314e.png "CloudyWithAChanceOfPain"
