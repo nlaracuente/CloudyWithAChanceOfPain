@@ -11,7 +11,7 @@ Sheep are dumb. Make sure the dumb sheep stay alive by using your rain and light
 
 ## Control
 - **Use Lightning**: LMB
-- **Use Rain**: RMB
+- **Use Rain**: RMB (Hold SHiFT, CRT, or CMD to conver Left Click into Right Clicks)
 - **Pause**: ESC
 
 ## Tools
@@ -20,4 +20,4 @@ Sheep are dumb. Make sure the dumb sheep stay alive by using your rain and light
 - Photoshop
 - Audacity
 
-[screenshot] https://static.jam.vg/raw/a67/8/z/3314e.png "CloudyWithAChanceOfPain"
+[screenshot]: https://static.jam.vg/raw/a67/8/z/3314e.png "CloudyWithAChanceOfPain"
